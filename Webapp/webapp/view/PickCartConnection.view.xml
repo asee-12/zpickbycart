@@ -1,0 +1,127 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View id="connection-view" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:suite="sap.suite.ui.commons" controllerName="scm.ewm.pickcarts1.controller.PickCartConnection"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="connection-page" showHeader="false" backgroundDesign="Solid">
+		<subHeader>
+			<Toolbar id="connection-subheader-toolbar" design="Transparent">
+				<layout:HorizontalLayout id="connection-subheader-layout">
+					<Title id="connection-subheader-layout-title" text="{path:'global>/woNumber', formatter:'.getTitle'}" titleStyle="H2" level="H2" class="sapUiTinyMarginTop sapUiMediumMarginEnd"/>
+				</layout:HorizontalLayout>
+				<Label text="{i18n>preparationSteps}" id="id_label_preparationSteps" labelFor="id-progress"/>
+				<ProgressIndicator id="id-progress" state="{= ${local>/progress} > 0 ? 'Success' : 'None'}" class="sapUiTinyMarginTop" width="30%"
+					percentValue="{parts:[{path:'local>/progress'},{path:'local>/handlingUnits'}], formatter:'.formatProgressPercentValue'}" showValue="true"
+					displayValue="{parts:[{path:'local>/progress'},{path:'local>/handlingUnits'}], formatter:'.formatProgressDisplayValue'}"></ProgressIndicator>
+				<ToolbarSpacer id="connection-subheader-toolbarspacer"/>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<layout:DynamicSideContent id="connection-dynamicsidecontent" sideContentPosition="Begin" showMainContent="true" showSideContent="true"
+				class="sapUiDSCExplored sapUiContentPadding" containerQuery="true">
+				<layout:sideContent id="connection-sidecontent">
+					<form:SimpleForm id="connection-simpleform" class="sapUiSmallMarginTop" maxContainerCols="2" layout="ResponsiveGridLayout" adjustLabelSpan="false" labelSpanL="1"
+						labelSpanM="2" labelSpanS="3" emptySpanL="0" emptySpanM="0" title="{i18n>preparation}">
+						<Label text="{i18n>packageMaterial}" id="id-label-package-material" labelFor="id-input-package-material">
+							<layoutData>
+								<layout:GridData id="connection-simpleform-grid-pakmat" span="L12 M12 S12"/>
+							</layoutData>
+						</Label>
+						<Input
+							id="id-input-package-material"
+							value="{parts:[{path:'local>/currentHandlingUnit/Maktx'}, {path:'local>/currentHandlingUnit/ProductName'}], formatter:'.formatPackagingMaterial'}"
+							enabled="false">
+							<layoutData>
+								<layout:GridData  id="connection-simpleform-grid-pakmat-input" span="L9 M9 S9"/>
+							</layoutData>
+						</Input>
+						<Label text="{i18n>pickHU}" id="id-label-pick-hu" labelFor="connection-hu-input">
+							<layoutData>
+								<layout:GridData  id="connection-simpleform-grid-pickhu" span="L12 M12 S12"/>
+							</layoutData>
+						</Label>
+						<Input id="connection-hu-input"
+							ariaLabelledBy="id-label-pick-hu"
+							value="{path:'local>/currentHandlingUnit/HandlingUnitNumber'}" valueStateText=""
+							valueState="{path:'local>/handlingUnitState', formatter:'.formatValueState'}"
+							enabled="{= ${local>/progress} === ${local>/handlingUnits}.length ? false : true}"
+							change="onHandlingUnitChange" submit="onSubmit">
+							<layoutData>
+								<layout:GridData id="connection-simpleform-grid-hu-input" span="L9 M9 S9"/>
+							</layoutData>
+						</Input>
+						<Label id="id-label-logical-position" text="{i18n>logicalPosition}" labelFor="connection-logical-position-input">
+							<layoutData>
+								<layout:GridData id="connection-simpleform-grid-logpos" span="L12 M12 S12"/>
+							</layoutData>
+						</Label>
+						<Input id="connection-logical-position-input" 
+							ariaLabelledBy="id-label-logical-position"
+							valueState="{path:'local>/logicalPositionState', formatter:'.formatValueState'}"
+							enabled="{= ${local>/progress} === ${local>/handlingUnits}.length ? false : true}"
+							change="onLogicalPositionChange">
+							<layoutData>
+								<layout:GridData id="connection-simpleform-grid-logpos-input" span="L9 M9 S9"/>
+							</layoutData>
+						</Input>
+					</form:SimpleForm>
+				</layout:sideContent>
+				<layout:mainContent id="connection-maincontent">
+					<Table id="PickCartTable" items="{path:'cart>/layout'}" backgroundDesign="Transparent">
+						<headerToolbar>
+							<OverflowToolbar id="connectionTableToolbar">
+								<core:Icon id="connection-tabletoolbar-icon" src="sap-icon://cart" size="26px"/>
+								<Title id="PickcartTitle" level="H4" titleStyle="H4"></Title>
+								<ToolbarSpacer id="connection-tabletoolbar-toolbarspacer"/>
+								<Button id="connection-tabletoolbar-btn" icon="sap-icon://legend" press="onPressLegend" tooltip="{i18n>legend}"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<layoutData>
+							<layout:GridData id="connection-tabletoolbar-grid" span="L8 M8 S8"></layout:GridData>
+						</layoutData>
+						<columns></columns>
+						<items>
+							<ColumnListItem id="connection-columnlistitem" cells="{path:'cart>cells',templateShareable:true}">
+								<cells>
+									<Button id="column-cell-button" icon="{= ${cart>connection/status} === 1 ? 'sap-icon://add-product' : ''}" enabled="true" press="onSelectPosition" width="100%"
+										type="{= ${cart>connection/status} === 1 ? 'Emphasized' : 'Transparent'}" text="{cart>Lab}"></Button>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<Input id="dummy-input" visible="true" class="dummyCss"></Input>
+					<layout:Grid id="legend-grid" class="sapUiLargeMarginTop" position="Right" hSpacing="0" visible="true">
+						<Title id="connection-title-legend" level="H6" titleStyle="H6" text="{i18n>legend}">
+							<layoutData>
+								<layout:GridData id="connection-title-legend-grid" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Button id="connection-legend-grid-fullbox-btn" icon="sap-icon://add-product" enabled="true" text="{i18n>fullBox}" type="Emphasized">
+							<layoutData>
+								<layout:GridData id="connection-legend-grid-fullbox-btn-grid" span="L2 M2 S2"/>
+							</layoutData>
+						</Button>
+						<Button id="connection-legend-grid-emptypos-btn" enabled="true" text="{i18n>emptyPosition}" type="Transparent">
+							<layoutData>
+								<layout:GridData id="connection-legend-grid-emptypos-grid" span="L2 M2 S2"/>
+							</layoutData>
+						</Button>
+					</layout:Grid>
+				</layout:mainContent>
+			</layout:DynamicSideContent>
+		</content>
+		<footer>
+			<OverflowToolbar id="connection-overflowtoolbar">
+				<Button id="errorMessagePopoverBtn" icon="sap-icon://message-popup" text="{= ${local>/errors}.length}"
+					visible="{= ${local>/errors}.length === 0 ? false : true}" press="onOpenMessagePopover" type="Emphasized"></Button>
+				<ToolbarSpacer id="connection-toolbarspacer"/>
+				<Button id="terminateBtn" text="{i18n>terminate}" press="onTerminate"></Button>
+				<Button id="resetBtn" text="{i18n>reset}" press="onResetPressed" visible="{= ${local>/progress} > 0 ? true : false}"></Button>
+				<Button id="nextBtn" text="{i18n>next}" press="onNavToProcessTasks" visible="{= ${local>/progress} === ${local>/handlingUnits}.length ? true : false}"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

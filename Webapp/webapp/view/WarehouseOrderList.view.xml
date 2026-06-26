@@ -1,0 +1,62 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View id="warehouseorderlist-view" controllerName="scm.ewm.pickcarts1.controller.WarehouseOrderList"
+			xmlns:mvc="sap.ui.core.mvc"
+			xmlns="sap.m"
+			xmlns:core="sap.ui.core"
+			xmlns:form="sap.ui.layout.form">
+	<Page id="wholist-page" showHeader="false" backgroundDesign="Solid">
+		<content>
+			<Table id="warehouseOrderList"
+				inset="true"
+				growing="true"
+				growingThreshold="20"
+				enableBusyIndicator="true"
+				growingScrollToLoad="false"
+				busyIndicatorDelay="200"
+				itemPress="handleItemPress"
+				width="100%">
+				<headerToolbar>
+					<Toolbar id="wholist-toolbar">
+						<Title id="tableTitle"/>
+						<ToolbarSpacer id="wholist-toolbarspacer"></ToolbarSpacer>
+						<SearchField id="searchField" liveChange="onSearch" width="30%">
+					</SearchField>
+						<Button id="wholist-btn" tooltip="" icon="sap-icon://sort" press="handleSortingDialogButtonPressed" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="wholist-column-1" width="12em">
+						<Label id="wholist-column-label-1" design="Bold" text="{i18n>warehouseOrders}" />
+					</Column>
+					<Column id="wholist-column-2" width="12em">
+						<Label id="wholist-column-label-2" design="Bold" text="{i18n>plannedHUs}" />
+					</Column>
+					<Column id="wholist-column-3" width="12em">
+						<Label id="wholist-column-label-3" design="Bold" text="{i18n>latestStartTime}" />
+					</Column>
+					<Column id="wholist-column-4" width="12em">
+						<Label id="wholist-column-label-4" design="Bold" text="{i18n>plannedDuration}" />
+					</Column>
+					<Column id="wholist-column-5" width="12em">
+						<Label id="wholist-column-label-5" design="Bold" text="{i18n>Queue}" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="wholist-columnlistitem" type="Navigation">
+						<cells>
+							<Text id="wholist-columnlistitem-who" text="{EWMWarehouseOrder}"></Text>
+							<Text id="wholist-columnlistitem-huamount" text="{path:'HuAmount', formatter:'.formatInteger'}"></Text>
+							<Text id="wholist-columnlistitem-lsd" text="{parts:[{path:'WhseOrderLatestStartDateTime'},{path:'IANA_TIMEZONE'}], formatter:'.formatDateTime'}"></Text>
+							<Text id="wholist-columnlistitem-plandura" text="{path:'WarehouseOrderPlannedDuration', formatter:'.formatNumber'}"></Text>
+							<Text id="wholist-columnlistitem-queue" text="{Queue}"></Text>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

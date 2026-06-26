@@ -1,0 +1,14 @@
+.dummyCss {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.custLeft {
+    float: left;
+}
+
+.custEanStyle {
+    display: inline-block;
+    width: 60%;
+}

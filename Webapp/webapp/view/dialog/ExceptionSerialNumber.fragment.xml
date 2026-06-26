@@ -1,0 +1,46 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="except-sn-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	controllerName="scm.ewm.pickcarts1.controller.ProcessWarehouseTasks">
+	<Label id="except-sn-actualpickqty" text="{i18n>actualPickedQuantity}"
+		visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}"
+		labelFor="exception-alternative-UoM">
+		<layoutData>
+			<layout:GridData id="except-sn-actualpickqty-grid" span="L8 M8 S8"/>
+		</layoutData>
+	</Label>
+	<Input id="exception-alternative-UoM"
+		visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}"
+		value="{local>/exceptionInfo/pickedUoM}" editable="false">
+		<layoutData>
+			<layout:GridData id="exception-alternative-UoM-grid" span="L9 M9 S9"/>
+		</layoutData>
+	</Input>
+	<Label id="except-sn-altuom" text="{local>/currentWarehouseTaskGroup/alternativeUom}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+		visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}">
+		<layoutData>
+			<layout:GridData id="except-sn-altuom-grid" span="L2 M2 S2"/>
+		</layoutData>
+	</Label>
+	<Label id="except-sn-sn" text="{i18n>serialNumber}" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" labelFor="id-input-serialNumber">
+		<layoutData>
+			<layout:GridData id="except-sn-sn-grid" span="L8 M8 S8"/>
+		</layoutData>
+	</Label>
+	<Input id="id-input-serialNumber" change="onExceptionSerialNumberChange" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"
+		value="" class="sapUiSmallMarginBottom">
+		<layoutData>
+			<layout:GridData id="id-input-serialNumber-grid" span="L9 M9 S9"/>
+		</layoutData>
+	</Input>
+	<Label id="except-sn-length" text="{= ${serialNum>/forTasksPicking}.length}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+		visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}">
+		<layoutData>
+			<layout:GridData id="except-sn-length-grid" span="L2 M2 S2"/>
+		</layoutData>
+	</Label>
+	<core:Fragment fragmentName="scm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"/>
+</core:FragmentDefinition>

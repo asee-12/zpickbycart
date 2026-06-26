@@ -1,0 +1,47 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="snlist-lowqty-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<Label id="snlist-lowqty-actualqty" text="{i18n>actualQuantity}" visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}"
+		labelFor="partialDenial-alternative">
+		<layoutData>
+			<layout:GridData id="snlist-lowqty-actualqty-grid" span="L8 M8 S8"/>
+		</layoutData>
+	</Label>
+	<Input id="exception-alternative-UoM"
+		visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}"
+		value="{local>/exceptionInfo/lowQtyCheckUom}" editable="false" >
+		<layoutData>
+			<layout:GridData id="exception-alternative-UoM-grid" span="L9 M9 S9"/>
+		</layoutData>
+	</Input>
+	<Label id="snlist-lowqty-altuom" text="{local>/currentWarehouseTaskGroup/alternativeUom}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+			visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}">
+		<layoutData>
+			<layout:GridData id="snlist-lowqty-altuom-grid" span="L2 M2 S2"/>
+		</layoutData>
+	</Label>
+	<Label id="snlist-lowqty-sn" text="{i18n>serialNumber}" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" labelFor="exception-serial-number">
+		<layoutData>
+			<layout:GridData id="snlist-lowqty-sn-grid" span="L8 M8 S8"/>
+		</layoutData>
+	</Label>
+	<Input id="id-input-serialNumber" change="onSerialNumForLowQtyCheckChange"
+		visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" value="" class="sapUiSmallMarginBottom">
+		<layoutData>
+			<layout:GridData id="id-input-serialNumber-grid" span="L9 M9 S9"/>
+		</layoutData>
+	</Input>
+	<Label  id="snlist-lowqty-check" text="{= ${serialNum>/forLowQtyCheck}.length}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"
+		visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}">
+		<layoutData>
+			<layout:GridData id="snlist-lowqty-check-grid" span="L2 M2 S2"/>
+		</layoutData>
+	</Label>
+
+	<List id="snlist-lowqty-list" mode="Delete" delete="onSerialNumberDeleteForLowQtyCheck" items="{path: 'serialNum>/forLowQtyCheck' }" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}">
+		<StandardListItem id="snlist-lowqty-listitem" title="{serialNum>}"/>
+	</List>
+</core:FragmentDefinition>

@@ -1,0 +1,48 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="spltfromdialog-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Dialog id="splittingFromDialog" title="{i18n>splitting}" contentWidth="450px"
+		contentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? '515px' : '300px'}" draggable="true"
+		afterOpen="afterOpenSplitting">
+		<Text id="spltfromdialog-text" text="{i18n>splittingFromDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/>
+		<form:SimpleForm  id="spltfromdialog-simpleform" layout="ResponsiveGridLayout">
+			<layout:Grid  id="spltfromdialog-simpleform-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0">
+				<Label id="spltfromdialog-label-desthu" text="{i18n>destHU}" labelFor="splitting-destHU-input">
+					<layoutData>
+						<layout:GridData id="spltfromdialog-label-desthu-grid" span="L8 M8 S8"/>
+					</layoutData>
+				</Label>
+				<Input id="splitting-destHU-input" change="onSplittingDestHUChange" value=""
+					editable="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"
+					valueState="{path:'local>/exceptionInfo/destHUState',formatter:'.formatValueState'}" valueStateText="{i18n>invalidInput}">
+					<layoutData>
+						<layout:GridData id="spltfromdialog-input-desthu-grid" span="L10 M10 S10"/>
+					</layoutData>
+				</Input>
+				<Label id="spltfromdialog-label-pickqty" text="{i18n>pickQuantity}" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"
+					labelFor="splitting-quantity-input" class="sapUiSmallMarginTop">
+					<layoutData>
+						<layout:GridData id="spltfromdialog-label-pickqty-grid" span="L5 M5 S5"/>
+					</layoutData>
+				</Label>
+				<Input id="splitting-quantity-input" change="onSplittingQuantityChange" value="{local>/exceptionInfo/pickedQuantity}" type="Number"
+					visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"
+					valueState="{path:'local>/exceptionInfo/pickedQuantityState',formatter:'.formatValueState'}"
+					valueStateText="{path:'local>/exceptionInfo/pickedQuantityState',formatter:'.formatValueText'}" class="sapUiSmallMarginBottom"
+					submit="onExceptionQuantitySubmit">
+					<layoutData>
+						<layout:GridData id="spltfromdialog-label-splitqty-input-grid" span="L10 M10 S10"/>
+					</layoutData>
+				</Input>
+				<core:Fragment id="splitting" fragmentName="scm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/>
+			</layout:Grid>
+		</form:SimpleForm>
+		<buttons>
+			<Button id="spltfromdialog-next-splitting-dialog-btn" text="{i18n>next}" press="onNextSplittingDialog"/>
+			<Button id="spltfromdialog-cancel-dialog-btn" text="{i18n>cancel}" press="onCancelDialog"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>
