@@ -1,0 +1,205 @@
+{
+    "_version": "1.11.0",
+    "sap.app": {
+        "id": "scm.ewm.pickcarts1",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "2025.0.17"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "ach": "SCM-EWM-WOP-PCK",
+        "sourceTemplate": {
+            "id": "ui5template.basicSAPUI5ApplicationProject",
+            "version": "1.40.12",
+            "toolsId": "87c2fb87-d7d6-4a2f-9297-15570a691044"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/SCWM/PICKCART_SRV",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            },
+            "defaultParametersService": {
+                "uri": "/sap/opu/odata/SCWM/USER_DEFAULTPARAMETER_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/defaultParamsMetadata.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://cart",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_belize"
+        ]
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "config": {
+            "sapFiori2Adaptation": true
+        },
+        "rootView": {
+            "viewName": "scm.ewm.pickcarts1.view.Main",
+            "type": "XML",
+            "id": "main"
+        },
+        "dependencies": {
+            "minUI5Version": "1.136.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ui.layout": {
+                    "lazy": true
+                },
+                "sap.tl.ewm.lib.reuses1": {
+                    "lazy": true
+                },
+                "sap.ui.comp": {
+                    "lazy": true
+                }
+            }
+        },
+        "contentDensities": {
+            "compact": false,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "scm.ewm.pickcarts1.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "settings": {
+                    "defaultUpdateMethod": "PUT",
+                    "defaultBindingMode": "TwoWay",
+                    "refreshAfterChange": true
+                },
+                "preload": false
+            },
+            "defaultParameters": {
+                "dataSource": "defaultParametersService",
+                "settings": {
+                    "metadataUrlParams": {
+                        "sap-documentation": "heading"
+                    },
+                    "defaultBindingMode": "TwoWay",
+                    "defaultOperationMode": "Server",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": true
+                },
+                "preload": false
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.ui.core.routing.Router",
+                "viewType": "XML",
+                "viewPath": "scm.ewm.pickcarts1.view",
+                "controlId": "appContainer",
+                "controlAggregation": "pages",
+                "clearControlAggregation": true,
+                "bypassed": {
+                    "target": [
+                        "logonResource"
+                    ]
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "logon",
+                    "target": "logonResource"
+                },
+                {
+                    "pattern": "connection/{warehouseOrder}/{bRestore}",
+                    "name": "connection",
+                    "target": "pickCartConnection"
+                },
+                {
+                    "pattern": "processTasks/{warehouseOrder}/{bRestore}",
+                    "name": "processTasks",
+                    "target": "processTasks"
+                },
+                {
+                    "pattern": "dropHandlingUnit/{warehouseOrder}/{warehouseNumber}/{bRestore}",
+                    "name": "dropHandlingUnit",
+                    "target": "dropHandlingUnit"
+                },
+                {
+                    "pattern": "warehouseOrderList/{resourceId}/{warehouseNumber}",
+                    "name": "warehouseOrderList",
+                    "target": "warehouseOrderList"
+                }
+            ],
+            "targets": {
+                "logonResource": {
+                    "viewName": "LogonResource",
+                    "controlAggregation": "pages",
+                    "viewId": "logonresource-view"
+                },
+                "pickCartConnection": {
+                    "viewName": "PickCartConnection",
+                    "controlAggregation": "pages",
+                    "viewId": "connection-view"
+                },
+                "processTasks": {
+                    "viewName": "ProcessWarehouseTasks",
+                    "controlAggregation": "pages",
+                    "viewId": "processtasks-view"
+                },
+                "dropHandlingUnit": {
+                    "viewName": "Drop",
+                    "controlAggregation": "pages",
+                    "viewId": "drop-view"
+                },
+                "warehouseOrderList": {
+                    "viewName": "WarehouseOrderList",
+                    "controlAggregation": "pages",
+                    "viewId": "warehouseorderlist-view"
+                }
+            }
+        }
+    },
+    "sap.fiori": {
+        "registrationIds": [
+            "F2793"
+        ],
+        "archeType": "transactional"
+    },
+    "sap.platform.hcp": {
+        "uri": ""
+    }
+}

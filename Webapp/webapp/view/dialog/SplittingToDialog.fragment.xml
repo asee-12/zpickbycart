@@ -1,0 +1,54 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="splttodialog-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<Dialog id="splittingToDialog" title="{i18n>splitting}" contentWidth="450px" draggable="true">
+		<Text id="splttodialog-text" text="{i18n>splittingToDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/>
+		<Text id="splttodialog-text2" text="{i18n>putToNewPosition}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginBottom"/>
+		<form:SimpleForm id="splttodialog-simpleform" layout="ResponsiveGridLayout">
+			<layout:Grid id="splttodialog-simpleform-grid" position="Left" defaultSpan="XL10 L10 M10 S10" vSpacing="0">
+				<Label id="splttodialog-simpleform-label-patmat" text="{i18n>packageMaterial}" labelFor="splitting-material-input">
+					<layoutData>
+						<layout:GridData id="splttodialog-simpleform-label-patmat-grid" span="L5 M5 S5"/>
+					</layoutData>
+				</Label>
+				<Input id="splitting-material-input" value="{local>/exceptionInfo/packageMaterial}" enabled="false" class="sapUiMediumMarginEnd">
+					<layoutData>
+						<layout:GridData id="splitting-material-input-grid" span="L10 M10 S10"/>
+					</layoutData>
+				</Input>
+				<Label id="splttodialog-simpleform-label-pickhu" text="{i18n>pickHU}" labelFor="splitting-pickHU-input" class="sapUiSmallMarginTop">
+					<layoutData>
+						<layout:GridData id="splttodialog-simpleform-label-pickhu-grid" span="L5 M5 S5"/>
+					</layoutData>
+				</Label>
+				<Input id="splitting-pickHU-input" value="{local>/exceptionInfo/pickingHU}"
+					valueState="{path:'local>/exceptionInfo/pickingHUState',formatter:'.formatValueState'}" valueStateText="{i18n>invalidInput}"
+					change="onSplittingPickingHUChange">
+					<layoutData>
+						<layout:GridData id="splitting-pickHU-input-grid" span="L10 M10 S10"/>
+					</layoutData>
+				</Input>
+				<Label id="splttodialog-simpleform-label-logpos" text="{i18n>logicalPosition}" labelFor="splitting-logicalPosition-input"
+					class="sapUiSmallMarginTop">
+					<layoutData>
+						<layout:GridData id="splttodialog-simpleform-label-logpos-grid" span="L5 M5 S5"/>
+					</layoutData>
+				</Label>
+				<Input id="splitting-logicalPosition-input" value="{local>/exceptionInfo/positionLabel}"
+					valueState="{path:'local>/exceptionInfo/logicalPositionState',formatter:'.formatValueState'}" valueStateText="{i18n>invalidInput}"
+					class="sapUiSmallMarginBottom" change="onSplittingLogicalPositionChange" submit="onSplittingLogicalPositionSubmit">
+					<layoutData>
+						<layout:GridData id="splitting-logicalPosition-input-grid" span="L10 M10 S10"/>
+					</layoutData>
+				</Input>
+			</layout:Grid>
+		</form:SimpleForm>
+		<buttons>
+			<Button id="splitting-ok-btn" text="{i18n>ok}" press="onSplittingConfirm"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

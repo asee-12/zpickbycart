@@ -1,0 +1,23 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<core:FragmentDefinition id="sn-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout">
+	<Popover id="sn-popover" title="{i18n>serialNum}" class="sapUiContentPadding" placement="Bottom">
+		<HBox id="sn-hbox">
+			<Input id="id-input-serialNumber" change="onSerialNumChange"
+				enabled="{path: 'serialNum>/forTasksPicking', formatter:'.formatSerialNumInputVisible'}"/>
+			<Label id="sn-hbox-label"
+				text="{parts:[{path: 'serialNum>/forTasksPicking'}, {path: 'local>/currentWarehouseTaskGroup/baseUom'}], formatter:'.formatSerialNumQtyDisplay'}"
+				class="sapUiSmallMarginTop"/>
+		</HBox>
+		<core:Fragment fragmentName="scm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"></core:Fragment>
+		<footer>
+			<Toolbar id="sn-footer-toolbar">
+				<ToolbarSpacer id="sn-footer-toolbarspacer"/>
+				<Button id="sn-footer-btn" text="{i18n>clear}" press="onSerialNumClear"/>
+			</Toolbar>
+		</footer>
+	</Popover>
+</core:FragmentDefinition>

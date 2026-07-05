@@ -1,0 +1,124 @@
+<!--
+
+    Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View id="drop-view" controllerName="scm.ewm.pickcarts1.controller.Drop" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
+	<Page id="drop-page" showHeader="false" backgroundDesign="Solid">
+		<subHeader>
+			<Toolbar id="drop-sub-toolbar" design="Transparent">
+				<layout:HorizontalLayout id="drop-sub-toolbar-hlayout">
+					<Title id="drop-sub-toolbar-hlayout-title" text="{path:'global>/woNumber', formatter:'.getTitle'}" titleStyle="H2" level="H2" class="sapUiMediumMarginEnd"></Title>
+				</layout:HorizontalLayout>
+				<Label text="{i18n>dropSteps}" id="id_label_dropSteps" labelFor="id-progress"/>
+				<ProgressIndicator id="id-progress" state="{= ${local>/progress} > 0 ? 'Success' : 'None'}"
+					percentValue="{parts:[{path:'local>/progress'},{path:'local>/taskGroups'}], formatter:'.formatProgressPercentValue'}" showValue="true"
+					displayValue="{parts:[{path:'local>/progress'},{path:'local>/taskGroups'}], formatter:'.formatProgressDisplayValue'}"
+					class="sapUiTinyMarginTop" width="30%"></ProgressIndicator>
+				<ToolbarSpacer id="drop-sub-toolbar-hlayout-toolbarspacer" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<layout:DynamicSideContent id="drop-content" sideContentPosition="Begin" showMainContent="true" showSideContent="true"
+				class="sapUiDSCExplored sapUiContentPadding" containerQuery="true">
+				<layout:sideContent>
+					<form:SimpleForm id="drop-content-simpleform" class="sapUiNoMarginBottom" maxContainerCols="2" layout="ResponsiveGridLayout" adjustLabelSpan="false" labelSpanL="1"
+						labelSpanM="2" labelSpanS="3" emptySpanL="0" emptySpanM="0" title="{i18n>unloading}">
+						<Label id="drop-content-simpleform-actualbin-label" text="{i18n>destBin}" labelFor="actualBinInput">
+							<layoutData>
+								<layout:GridData id="drop-content-simpleform-actualbin-grid" span="L12 M12 S12"/>
+							</layoutData>
+						</Label>
+						<Input id="origionalDesbin" enabled="false" value="{local>/currentGroup/expectedBin}">
+							<layoutData>
+								<layout:GridData id="origionalDesbin-grid" span="L9 M9 S9"/>
+							</layoutData>
+						</Input>
+						<Input id="actualBinInput" value="{local>/currentGroup/actualBin}" change="onDestBinChange" submit="onSubmit"
+							visible="{path:'local>/currentGroup/destBinVerifyRequrired'}">
+							<layoutData>
+								<layout:GridData id="actualBinInput-grid" span="L3 M3 S3"/>
+							</layoutData>
+						</Input>
+						<Label id="drop-content-simpleform-desthu-label" text="{i18n>destHU}" labelFor="destHandlingUnitInput">
+							<layoutData>
+								<layout:GridData id="drop-content-simpleform-desthu-label-grid" span="L12 M12 S12"/>
+							</layoutData>
+						</Label>
+						<Input id="destHandlingUnitInput" change="onDestHandlingUnitChange">
+							<layoutData>
+								<layout:GridData id="destHandlingUnitInput-grid" span="L9 M9 S9"/>
+							</layoutData>
+						</Input>
+					</form:SimpleForm>
+				</layout:sideContent>
+				<layout:mainContent>
+					<Table id="PickCartTable" items="{path:'cart>/layout'}" backgroundDesign="Transparent">
+						<headerToolbar>
+							<OverflowToolbar id="connectionTableToolbar">
+								<core:Icon id="drop-main-icon" src="sap-icon://cart" size="26px"/>
+								<Title id="PickcartTitle" level="H4" titleStyle="H4"></Title>
+								<ToolbarSpacer id="drop-main-toolbarspacer"/>
+								<Button id="drop-main-legend-btn" icon="sap-icon://legend" press="onPressLegend" tooltip="{i18n>legend}"/>
+								<Button id="dropAllButton" text="{i18n>dropAll}" press="onDropAll" visible="{local>/currentGroup/isDropAll}" type="Transparent"
+									enabled="false"></Button>
+							</OverflowToolbar>
+						</headerToolbar>
+						<layoutData>
+							<layout:GridData id="drop-main-table-grid" span="L8 M8 S8"></layout:GridData>
+						</layoutData>
+						<columns></columns>
+						<items>
+							<ColumnListItem id="drop-main-col-listitem" cells="{path:'cart>cells',templateShareable:true}">
+								<cells>
+									<Button id="column-cell-button" icon="{path:'cart>dropping/status', formatter:'.formatPositionIcon'}"
+										enabled="{path:'cart>dropping/status', formatter:'.formatPositionEnabled'}" press="onSelectPosition" width="100%"
+										type="{path:'cart>dropping/status', formatter:'.formatPositionType'}" text="{cart>Lab}"></Button>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<layout:Grid id="legend-grid" class="sapUiLargeMarginTop" position="Right" hSpacing="0" visible="true">
+						<Title id="drop-main-legend-grid-title" level="H6" titleStyle="H6" text="{i18n>legend}">
+							<layoutData>
+								<layout:GridData id="legend-grid-title-grid" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Button id="unloading-legend" icon="sap-icon://less" text="{i18n>needToDropHandlingUnit}" type="Emphasized">
+							<layoutData>
+								<layout:GridData id="unloading-legend-grid" span="L3 M3 S3"/>
+							</layoutData>
+						</Button>
+						<ObjectStatus id="empty-legend" text="{i18n>emptyPosition}" class="sapUiSmallMarginTop" state="None">
+							<!--<Button  text="{i18n>emptyPosition}" type="Transparent" enabled="true">-->
+							<layoutData>
+								<layout:GridData id="empty-legend-grid" span="L3 M3 S3"/>
+							</layoutData>
+						</ObjectStatus>
+						<!--</Button>-->
+						<ObjectStatus id="validHU-legend" icon="sap-icon://add-product" text="{i18n>validHU}" state="None" class="sapUiSmallMarginTop">
+							<layoutData>
+								<layout:GridData id="validHU-legend-grid" span="L3 M3 S3"/>
+							</layoutData>
+						</ObjectStatus>
+						<ObjectStatus id="decline-legend" icon="sap-icon://decline" text="{i18n>incorrectDroppedHU}" state="Error" class="sapUiSmallMarginTop">
+							<layoutData>
+								<layout:GridData id="decline-legend-grid" span="L3 M3 S3"/>
+							</layoutData>
+						</ObjectStatus>
+					</layout:Grid>
+				</layout:mainContent>
+			</layout:DynamicSideContent>
+		</content>
+		<Input id="dummy-input" visible="true" class="dummyCss"></Input>
+		<footer>
+			<OverflowToolbar id="drop-footer-overflowtoolbar">
+				<Button id="errorMessagePopoverBtn" icon="sap-icon://message-popup" text="{= ${local>/errors}.length}"
+					visible="{= ${local>/errors}.length === 0 ? false : true}" press="onOpenMessagePopover" type="Emphasized"></Button>
+				<ToolbarSpacer id="drop-footer-overflowtoolbar-toolbarspacer"/>
+				<Button id="terminateButton" text="{i18n>terminate}" press="onTerminate" type="Transparent"></Button>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>
