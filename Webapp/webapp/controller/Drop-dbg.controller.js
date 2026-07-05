@@ -17,7 +17,7 @@ sap.ui.define([
 	var emptyOrder = "0000000000";
 	var rfErrorCode = "/SCWM/RF_EN/056"; //error: No more available warehouse orders
 	var pbC24ErrorCode = "/SCWM/PICKCART/024"; //error: Documentary batches not supported
-	return Controller.extend("scm.ewm.pickcarts1.controller.Drop", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.Drop", {
 		sRouteName: "dropHandlingUnit",
 		aManualInput: [{
 			id: sBinId

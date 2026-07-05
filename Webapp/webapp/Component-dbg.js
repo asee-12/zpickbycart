@@ -12,7 +12,7 @@ sap.ui.define([
 	var pickingViewId = "---processtasks-view--";
 	var droppingViewId = "---drop-view--";
 	var tableCellTemplateId = "column-cell-button";
-	return BaseComponent.extend("scm.ewm.pickcarts1.Component", {
+	return BaseComponent.extend("zscm.ewm.pickcarts1.Component", {
 
 		metadata: {
 			manifest: "json"

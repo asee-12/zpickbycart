@@ -24,7 +24,7 @@
 						<layout:GridData id="quantityAdjustment-input-grid" span="L10 M10 S10"/>
 					</layoutData>
 				</Input>
-				<core:Fragment id="quantityAdjustment"  fragmentName="scm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"></core:Fragment>
+				<core:Fragment id="quantityAdjustment"  fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"></core:Fragment>
 			</layout:Grid>
 		</form:SimpleForm>
 		<buttons>

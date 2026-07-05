@@ -36,7 +36,7 @@
 						<layout:GridData id="partialDenial-quantity-input-grid" span="L10 M10 S10"/>
 					</layoutData>
 				</Input>
-				<core:Fragment id="partialDenial" fragmentName="scm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/>
+				<core:Fragment id="partialDenial" fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/>
 			</layout:Grid>
 		</form:SimpleForm>
 		<buttons>

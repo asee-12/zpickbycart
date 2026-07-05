@@ -4,7 +4,7 @@
 sap.ui.define(['sap/ui/core/Control'],
 	function (Control) {
 		"use strict";
-		var AudioList = Control.extend("scm.ewm.pickcarts1.control.AudioList", {
+		var AudioList = Control.extend("zscm.ewm.pickcarts1.control.AudioList", {
 			metadata: {
 				properties: {
 					visible: {

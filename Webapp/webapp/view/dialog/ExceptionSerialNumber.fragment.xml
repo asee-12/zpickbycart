@@ -4,7 +4,7 @@
 
 -->
 <core:FragmentDefinition id="except-sn-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"
-	controllerName="scm.ewm.pickcarts1.controller.ProcessWarehouseTasks">
+	controllerName="zscm.ewm.pickcarts1.controller.ProcessWarehouseTasks">
 	<Label id="except-sn-actualpickqty" text="{i18n>actualPickedQuantity}"
 		visible="{parts:[{path:'local>/currentWarehouseTaskGroup/isSerialNumberEnabled'},{path:'local>/currentWarehouseTaskGroup/totalBaseQty'},{path:'local>/currentWarehouseTaskGroup/totalAlternativeQty'}], formatter:'.formatExceptionUomVisible'}"
 		labelFor="exception-alternative-UoM">
@@ -42,5 +42,5 @@
 			<layout:GridData id="except-sn-length-grid" span="L2 M2 S2"/>
 		</layoutData>
 	</Label>
-	<core:Fragment fragmentName="scm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"/>
+	<core:Fragment fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"/>
 </core:FragmentDefinition>

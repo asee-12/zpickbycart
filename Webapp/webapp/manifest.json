@@ -1,7 +1,7 @@
 {
     "_version": "1.11.0",
     "sap.app": {
-        "id": "scm.ewm.pickcarts1",
+        "id": "zscm.ewm.pickcarts1",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -18,7 +18,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "/sap/opu/odata/SCWM/PICKCART_SRV",
+                "uri": "/sap/opu/odata/sap/zdh_cust_pickcart_srv",
                 "type": "OData",
                 "settings": {
                     "odataVersion": "2.0",
@@ -61,7 +61,7 @@
             "sapFiori2Adaptation": true
         },
         "rootView": {
-            "viewName": "scm.ewm.pickcarts1.view.Main",
+            "viewName": "zscm.ewm.pickcarts1.view.Main",
             "type": "XML",
             "id": "main"
         },
@@ -89,7 +89,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "scm.ewm.pickcarts1.i18n.i18n"
+                    "bundleName": "zscm.ewm.pickcarts1.i18n.i18n"
                 }
             },
             "": {
@@ -126,7 +126,7 @@
             "config": {
                 "routerClass": "sap.ui.core.routing.Router",
                 "viewType": "XML",
-                "viewPath": "scm.ewm.pickcarts1.view",
+                "viewPath": "zscm.ewm.pickcarts1.view",
                 "controlId": "appContainer",
                 "controlAggregation": "pages",
                 "clearControlAggregation": true,

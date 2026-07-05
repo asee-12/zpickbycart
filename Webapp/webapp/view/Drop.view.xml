@@ -3,7 +3,7 @@
     Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
 
 -->
-<mvc:View id="drop-view" controllerName="scm.ewm.pickcarts1.controller.Drop" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
+<mvc:View id="drop-view" controllerName="zscm.ewm.pickcarts1.controller.Drop" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"
 	xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form">
 	<Page id="drop-page" showHeader="false" backgroundDesign="Solid">
 		<subHeader>

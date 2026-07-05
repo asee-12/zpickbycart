@@ -1,5 +1,448 @@
 /*
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
-sap.ui.define(["scm/ewm/pickcarts1/controller/Base.controller","scm/ewm/pickcarts1/model/Global","scm/ewm/pickcarts1/model/OData","scm/ewm/pickcarts1/model/Drop","scm/ewm/pickcarts1/model/PickCartLayout","scm/ewm/pickcarts1/utils/Const","scm/ewm/pickcarts1/utils/Util","sap/m/MessageBox"],function(t,i,e,s,n,r,o,a){"use strict";var u="actualBinInput";var l="destHandlingUnitInput";var f="0000000000";var c="/SCWM/RF_EN/056";var h="/SCWM/PICKCART/024";return t.extend("scm.ewm.pickcarts1.controller.Drop",{sRouteName:"dropHandlingUnit",aManualInput:[{id:u},{id:l}],aPositionsToConfirm:[],init:function(){this.aWrongHandlingUnit=[];this.setModel(s.init(),"local");this.getErrorMessagePopover().setModel(s.init())},onRouteMatched:function(t){this.toggleButtonStatus(false);s.clearData();e.getDropData(t.warehouseOrder,e.getWarehouseNumber()).then(function(t){var i=t[0];var e=t[1];var o=t[2];if(i!==null){n.setData(i)}if(e.length>0){s.setData(e,o);n.setStatusForDroppingByIds(s.getAllPositions(),r.HU_STATUS_DROP.VALID);this.moveFocus()}else{this.showNoHandlingUnitMessage()}this.setBusy(false)}.bind(this)).catch(function(t){this.setBusy(false);this.playAudio(r.ERROR)}.bind(this))},onDestBinChange:function(t){var i=o.trim(t.getParameter("newValue"));i=i.toUpperCase();var n=s.getCurrentExpectedBin();if(!o.isEmpty(i)){var r=e.verifySourceBin(n,i);this.verify(r,u,function t(){this.setInputValue(u,n)}.bind(this),function t(){this.toggleButtonStatus(false)}.bind(this))}else{this.toggleButtonStatus(false);this.updateInputWithDefault(u,"");this.focusTo(u)}},onDestHandlingUnitChange:function(t){var i=this;var u=o.trim(t.getParameter("newValue"));u=u.toUpperCase();this.setBusy(true);e.convertHUID(u).then(function(t){this.setBusy(false);u=t.Huident;var e;var f=new Promise(function(t,i){e=this.transformDestHUInput(u);var s=e[1];if(!e){i()}else if(this.isValidPosition(s)){t(s)}else{i(e)}}.bind(this));function c(){i.verify(f,l,function t(e){i.fixWrongHandlingUnit();i.setInputValue(l,u)},function t(e){if(e){var s=e[0];var o=e[1];if(s!==undefined){i.aWrongHandlingUnit.push(o);n.setStatusForDroppingByIds([o],r.HU_STATUS_DROP.WRONG)}}})}if(!o.isEmpty(u)){f.then(function t(e){if(i.isAllTaskOfGroupFinished()){var n=s.getHandlingUnitsWithSplitting();var u=s.getCurrentExpectedBin();if(!o.isEmpty(n)){var l=i.getI18nText("unloadingWithSplittingMsg",[n,u]);a.warning(l,{onClose:c});i.playAudio(r.WARNING)}else{c()}}else{c()}},function t(){c()})}}.bind(this)).catch(function(){this.setBusy(false);this.playAudio(r.ERROR)}.bind(this))},onDropAll:function(){var t=s.getHandlingUnitsWithSplitting();var i=s.getCurrentExpectedBin();if(!o.isEmpty(t)){var e=this.getI18nText("unloadingWithSplittingMsg",[t,i]);a.warning(e,{onClose:this.afterDropAll.bind(this)});this.playAudio(r.WARNING)}else{this.afterDropAll()}},afterDropAll:function(){this.fixWrongHandlingUnit();this.toggleButtonStatus(false);var t=s.getConfirmData();var i=t[0];var n=t[1];if(i&&i.length>0){this.aPositionsToConfirm=s.getPositionsOfCurrentGroup();this.confirmTask(e.submitTasksInBatch(i,n),function(t){if(this.isConfirmSuccess(t)){s.finishCurrentGroup()}}.bind(this))}},isConfirmSuccess:function(t){var i=true;o.find(t,function(t){if(t.Failed==="X"){i=false;return true}return false});return i},confirmTask:function(t,i,e){this.setBusy(true);var o;if(t){o=t}else{o=this.getConfirmPromise()}o.then(function(t){var e=this.aManualInput[this.aManualInput.length-1].id;this.updateInputWithDefault(e,"");if(this.isConfirmSuccess(t)){n.setStatusForDroppingByIds(this.aPositionsToConfirm,r.HU_STATUS_DROP.INVALID);if(i){i(t)}this.onConfirmSuccess(t)}else{n.setStatusForDroppingByIds(this.aPositionsToConfirm,r.HU_STATUS_DROP.WRONG);this.aPositionsToConfirm.forEach(function(t){s.updateTaskConfirmStatusByPosition(t,r.TASK_STATUS.INITIAL)})}this.setErrorsFromConfirmResult(t,s);this.setBusy(false);this.playAudio(r.INFO)}.bind(this)).catch(function(t){this.setBusy(false);this.playAudio(r.ERROR)}.bind(this))},showNoHandlingUnitMessage:function(){var t=this.getI18nText("noHandlingUnitUnloadMessage",i.getWONumber());a.warning(t,{onClose:this.onDropFinish.bind(this),textDirection:sap.ui.core.TextDirection.Inherit})},enableCartInteraction:function(){var t=s.getPositionsOfCurrentGroup();n.setStatusForDroppingByIds(t,r.HU_STATUS_DROP.NEED_DROP);this.toggleButtonStatus(true)},getConfirmPromise:function(){var t=this.getInputValue(l);var i=this.transformDestHUInput(t);var n=i[0];var r=i[1];var o=s.getConfirmDataByHU(n);var a=o[0];var u=o[1];this.aPositionsToConfirm=[r];if(this.isAllTaskOfGroupFinished()){var f=s.getConfirmDataForEmptyPosition();a=a.concat(f)}return e.submitTasksInBatch(a,u)},isAllTaskOfGroupFinished:function(){var t=true;t=s.isReadyToNextGroup();return t},isAllGroupFinished:function(){var t=false;if(s.isLastGroup()){t=true}return t},goToNextGroup:function(){s.goToNextGroup();this.toggleButtonStatus(false)},goToNextTask:function(){s.updateTaskProgress();this.focusTo(l)},goToNextStage:function(){this.onDropFinish()},fixWrongHandlingUnit:function(){if(this.aWrongHandlingUnit.length>0){n.setStatusForDroppingByIds(this.aWrongHandlingUnit,r.HU_STATUS_DROP.VALID);this.aWrongHandlingUnit=[]}},transformDestHUInput:function(t){var i;var e;var r=s.getAllDestHUs();if(o.includes(r,t)){i=t;e=s.getPositionIdByHU(t);return[i,e]}else if((e=n.getPositionByLable(t))!==undefined){i=s.getDestHUByPositionId(e);return[i,e]}},isValidPosition:function(t){var i=false;var e=s.getPositionsOfCurrentGroup();if(o.includes(e,t)&&n.getDropingStatusById(t)===r.HU_STATUS_DROP.NEED_DROP){i=true}return i},toggleButtonStatus:function(t){this.byId("dropAllButton").setEnabled(t)},formatPositionIcon:function(t){var i=r.HU_STATUS_DROP;var e="";switch(t){case i.INVALID:e="";break;case i.VALID:e="sap-icon://add-product";break;case i.NEED_DROP:e="sap-icon://less";break;case i.WRONG:e="sap-icon://decline";break}return e},formatPositionType:function(t){var i=r.HU_STATUS_DROP;var e="Transparent";switch(t){case i.INVALID:e="Transparent";break;case i.VALID:e="Default";break;case i.NEED_DROP:e="Emphasized";break;case i.DROPPED:e="Accept";break;case i.WRONG:e="Reject";break}return e},formatProgressPercentValue:function(t,i){if(i.length>0){return t*100/i.length}return 0},formatProgressDisplayValue:function(t,i){return t+"/"+i.length},formatPositionEnabled:function(t){var i=true;if(t===r.HU_STATUS_DROP.INVALID){i=false}return i},onDropFinish:function(){if(i.getToLeaveAfterDrop()===true){this.terminateOrder(true,false);return}var t=!i.isSystemMode();this.setBusy(true);e.logonResource(t).then(function(s){if(s&&s.EWMWarehouseOrder!==f){i.setWONumber(s.EWMWarehouseOrder);var n=o.getNavParamsByStatus(s.PickcartWhoStatus,s,false);if(n.route){i.setAppProgress(n.progress);this.navTo(n.route,n.param)}}else if(t){var r=e.getResourceNumber();var a=e.getWarehouseNumber();i.setWONumber("");i.setAppProgress(1);this.navTo("warehouseOrderList",{resourceId:r,warehouseNumber:a})}this.setBusy(false)}.bind(this)).catch(function(t){if(!o.isString(t)&&o.isJsonString(t.responseText)){var i=JSON.parse(t.responseText).error.code;if(i.toUpperCase()===c){var e=this.getI18nText("noWarehouseOrderAvailableMsg");a.information(e);this.playAudio(r.INFO)}else if(i.toUpperCase()===h){var e=this.getI18nText("documentaryBatchesNotSupportedMsg");a.information(e);this.playAudio(r.INFO)}else{this.playAudio(r.ERROR)}}else{this.playAudio(r.ERROR)}this.setBusy(false)}.bind(this))}})});
+sap.ui.define(
+  [
+    "scm/ewm/pickcarts1/controller/Base.controller",
+    "scm/ewm/pickcarts1/model/Global",
+    "scm/ewm/pickcarts1/model/OData",
+    "scm/ewm/pickcarts1/model/Drop",
+    "scm/ewm/pickcarts1/model/PickCartLayout",
+    "scm/ewm/pickcarts1/utils/Const",
+    "scm/ewm/pickcarts1/utils/Util",
+    "sap/m/MessageBox",
+  ],
+  function (t, i, e, s, n, r, o, a) {
+    "use strict";
+    var u = "actualBinInput";
+    var l = "destHandlingUnitInput";
+    var f = "0000000000";
+    var c = "/SCWM/RF_EN/056";
+    var h = "/SCWM/PICKCART/024";
+    return t.extend("zscm.ewm.pickcarts1.controller.Drop", {
+      sRouteName: "dropHandlingUnit",
+      aManualInput: [{ id: u }, { id: l }],
+      aPositionsToConfirm: [],
+      init: function () {
+        this.aWrongHandlingUnit = [];
+        this.setModel(s.init(), "local");
+        this.getErrorMessagePopover().setModel(s.init());
+      },
+      onRouteMatched: function (t) {
+        this.toggleButtonStatus(false);
+        s.clearData();
+        e.getDropData(t.warehouseOrder, e.getWarehouseNumber())
+          .then(
+            function (t) {
+              var i = t[0];
+              var e = t[1];
+              var o = t[2];
+              if (i !== null) {
+                n.setData(i);
+              }
+              if (e.length > 0) {
+                s.setData(e, o);
+                n.setStatusForDroppingByIds(
+                  s.getAllPositions(),
+                  r.HU_STATUS_DROP.VALID,
+                );
+                this.moveFocus();
+              } else {
+                this.showNoHandlingUnitMessage();
+              }
+              this.setBusy(false);
+            }.bind(this),
+          )
+          .catch(
+            function (t) {
+              this.setBusy(false);
+              this.playAudio(r.ERROR);
+            }.bind(this),
+          );
+      },
+      onDestBinChange: function (t) {
+        var i = o.trim(t.getParameter("newValue"));
+        i = i.toUpperCase();
+        var n = s.getCurrentExpectedBin();
+        if (!o.isEmpty(i)) {
+          var r = e.verifySourceBin(n, i);
+          this.verify(
+            r,
+            u,
+            function t() {
+              this.setInputValue(u, n);
+            }.bind(this),
+            function t() {
+              this.toggleButtonStatus(false);
+            }.bind(this),
+          );
+        } else {
+          this.toggleButtonStatus(false);
+          this.updateInputWithDefault(u, "");
+          this.focusTo(u);
+        }
+      },
+      onDestHandlingUnitChange: function (t) {
+        var i = this;
+        var u = o.trim(t.getParameter("newValue"));
+        u = u.toUpperCase();
+        this.setBusy(true);
+        e.convertHUID(u)
+          .then(
+            function (t) {
+              this.setBusy(false);
+              u = t.Huident;
+              var e;
+              var f = new Promise(
+                function (t, i) {
+                  e = this.transformDestHUInput(u);
+                  var s = e[1];
+                  if (!e) {
+                    i();
+                  } else if (this.isValidPosition(s)) {
+                    t(s);
+                  } else {
+                    i(e);
+                  }
+                }.bind(this),
+              );
+              function c() {
+                i.verify(
+                  f,
+                  l,
+                  function t(e) {
+                    i.fixWrongHandlingUnit();
+                    i.setInputValue(l, u);
+                  },
+                  function t(e) {
+                    if (e) {
+                      var s = e[0];
+                      var o = e[1];
+                      if (s !== undefined) {
+                        i.aWrongHandlingUnit.push(o);
+                        n.setStatusForDroppingByIds(
+                          [o],
+                          r.HU_STATUS_DROP.WRONG,
+                        );
+                      }
+                    }
+                  },
+                );
+              }
+              if (!o.isEmpty(u)) {
+                f.then(
+                  function t(e) {
+                    if (i.isAllTaskOfGroupFinished()) {
+                      var n = s.getHandlingUnitsWithSplitting();
+                      var u = s.getCurrentExpectedBin();
+                      if (!o.isEmpty(n)) {
+                        var l = i.getI18nText("unloadingWithSplittingMsg", [
+                          n,
+                          u,
+                        ]);
+                        a.warning(l, { onClose: c });
+                        i.playAudio(r.WARNING);
+                      } else {
+                        c();
+                      }
+                    } else {
+                      c();
+                    }
+                  },
+                  function t() {
+                    c();
+                  },
+                );
+              }
+            }.bind(this),
+          )
+          .catch(
+            function () {
+              this.setBusy(false);
+              this.playAudio(r.ERROR);
+            }.bind(this),
+          );
+      },
+      onDropAll: function () {
+        var t = s.getHandlingUnitsWithSplitting();
+        var i = s.getCurrentExpectedBin();
+        if (!o.isEmpty(t)) {
+          var e = this.getI18nText("unloadingWithSplittingMsg", [t, i]);
+          a.warning(e, { onClose: this.afterDropAll.bind(this) });
+          this.playAudio(r.WARNING);
+        } else {
+          this.afterDropAll();
+        }
+      },
+      afterDropAll: function () {
+        this.fixWrongHandlingUnit();
+        this.toggleButtonStatus(false);
+        var t = s.getConfirmData();
+        var i = t[0];
+        var n = t[1];
+        if (i && i.length > 0) {
+          this.aPositionsToConfirm = s.getPositionsOfCurrentGroup();
+          this.confirmTask(
+            e.submitTasksInBatch(i, n),
+            function (t) {
+              if (this.isConfirmSuccess(t)) {
+                s.finishCurrentGroup();
+              }
+            }.bind(this),
+          );
+        }
+      },
+      isConfirmSuccess: function (t) {
+        var i = true;
+        o.find(t, function (t) {
+          if (t.Failed === "X") {
+            i = false;
+            return true;
+          }
+          return false;
+        });
+        return i;
+      },
+      confirmTask: function (t, i, e) {
+        this.setBusy(true);
+        var o;
+        if (t) {
+          o = t;
+        } else {
+          o = this.getConfirmPromise();
+        }
+        o.then(
+          function (t) {
+            var e = this.aManualInput[this.aManualInput.length - 1].id;
+            this.updateInputWithDefault(e, "");
+            if (this.isConfirmSuccess(t)) {
+              n.setStatusForDroppingByIds(
+                this.aPositionsToConfirm,
+                r.HU_STATUS_DROP.INVALID,
+              );
+              if (i) {
+                i(t);
+              }
+              this.onConfirmSuccess(t);
+            } else {
+              n.setStatusForDroppingByIds(
+                this.aPositionsToConfirm,
+                r.HU_STATUS_DROP.WRONG,
+              );
+              this.aPositionsToConfirm.forEach(function (t) {
+                s.updateTaskConfirmStatusByPosition(t, r.TASK_STATUS.INITIAL);
+              });
+            }
+            this.setErrorsFromConfirmResult(t, s);
+            this.setBusy(false);
+            this.playAudio(r.INFO);
+          }.bind(this),
+        ).catch(
+          function (t) {
+            this.setBusy(false);
+            this.playAudio(r.ERROR);
+          }.bind(this),
+        );
+      },
+      showNoHandlingUnitMessage: function () {
+        var t = this.getI18nText(
+          "noHandlingUnitUnloadMessage",
+          i.getWONumber(),
+        );
+        a.warning(t, {
+          onClose: this.onDropFinish.bind(this),
+          textDirection: sap.ui.core.TextDirection.Inherit,
+        });
+      },
+      enableCartInteraction: function () {
+        var t = s.getPositionsOfCurrentGroup();
+        n.setStatusForDroppingByIds(t, r.HU_STATUS_DROP.NEED_DROP);
+        this.toggleButtonStatus(true);
+      },
+      getConfirmPromise: function () {
+        var t = this.getInputValue(l);
+        var i = this.transformDestHUInput(t);
+        var n = i[0];
+        var r = i[1];
+        var o = s.getConfirmDataByHU(n);
+        var a = o[0];
+        var u = o[1];
+        this.aPositionsToConfirm = [r];
+        if (this.isAllTaskOfGroupFinished()) {
+          var f = s.getConfirmDataForEmptyPosition();
+          a = a.concat(f);
+        }
+        return e.submitTasksInBatch(a, u);
+      },
+      isAllTaskOfGroupFinished: function () {
+        var t = true;
+        t = s.isReadyToNextGroup();
+        return t;
+      },
+      isAllGroupFinished: function () {
+        var t = false;
+        if (s.isLastGroup()) {
+          t = true;
+        }
+        return t;
+      },
+      goToNextGroup: function () {
+        s.goToNextGroup();
+        this.toggleButtonStatus(false);
+      },
+      goToNextTask: function () {
+        s.updateTaskProgress();
+        this.focusTo(l);
+      },
+      goToNextStage: function () {
+        this.onDropFinish();
+      },
+      fixWrongHandlingUnit: function () {
+        if (this.aWrongHandlingUnit.length > 0) {
+          n.setStatusForDroppingByIds(
+            this.aWrongHandlingUnit,
+            r.HU_STATUS_DROP.VALID,
+          );
+          this.aWrongHandlingUnit = [];
+        }
+      },
+      transformDestHUInput: function (t) {
+        var i;
+        var e;
+        var r = s.getAllDestHUs();
+        if (o.includes(r, t)) {
+          i = t;
+          e = s.getPositionIdByHU(t);
+          return [i, e];
+        } else if ((e = n.getPositionByLable(t)) !== undefined) {
+          i = s.getDestHUByPositionId(e);
+          return [i, e];
+        }
+      },
+      isValidPosition: function (t) {
+        var i = false;
+        var e = s.getPositionsOfCurrentGroup();
+        if (
+          o.includes(e, t) &&
+          n.getDropingStatusById(t) === r.HU_STATUS_DROP.NEED_DROP
+        ) {
+          i = true;
+        }
+        return i;
+      },
+      toggleButtonStatus: function (t) {
+        this.byId("dropAllButton").setEnabled(t);
+      },
+      formatPositionIcon: function (t) {
+        var i = r.HU_STATUS_DROP;
+        var e = "";
+        switch (t) {
+          case i.INVALID:
+            e = "";
+            break;
+          case i.VALID:
+            e = "sap-icon://add-product";
+            break;
+          case i.NEED_DROP:
+            e = "sap-icon://less";
+            break;
+          case i.WRONG:
+            e = "sap-icon://decline";
+            break;
+        }
+        return e;
+      },
+      formatPositionType: function (t) {
+        var i = r.HU_STATUS_DROP;
+        var e = "Transparent";
+        switch (t) {
+          case i.INVALID:
+            e = "Transparent";
+            break;
+          case i.VALID:
+            e = "Default";
+            break;
+          case i.NEED_DROP:
+            e = "Emphasized";
+            break;
+          case i.DROPPED:
+            e = "Accept";
+            break;
+          case i.WRONG:
+            e = "Reject";
+            break;
+        }
+        return e;
+      },
+      formatProgressPercentValue: function (t, i) {
+        if (i.length > 0) {
+          return (t * 100) / i.length;
+        }
+        return 0;
+      },
+      formatProgressDisplayValue: function (t, i) {
+        return t + "/" + i.length;
+      },
+      formatPositionEnabled: function (t) {
+        var i = true;
+        if (t === r.HU_STATUS_DROP.INVALID) {
+          i = false;
+        }
+        return i;
+      },
+      onDropFinish: function () {
+        if (i.getToLeaveAfterDrop() === true) {
+          this.terminateOrder(true, false);
+          return;
+        }
+        var t = !i.isSystemMode();
+        this.setBusy(true);
+        e.logonResource(t)
+          .then(
+            function (s) {
+              if (s && s.EWMWarehouseOrder !== f) {
+                i.setWONumber(s.EWMWarehouseOrder);
+                var n = o.getNavParamsByStatus(s.PickcartWhoStatus, s, false);
+                if (n.route) {
+                  i.setAppProgress(n.progress);
+                  this.navTo(n.route, n.param);
+                }
+              } else if (t) {
+                var r = e.getResourceNumber();
+                var a = e.getWarehouseNumber();
+                i.setWONumber("");
+                i.setAppProgress(1);
+                this.navTo("warehouseOrderList", {
+                  resourceId: r,
+                  warehouseNumber: a,
+                });
+              }
+              this.setBusy(false);
+            }.bind(this),
+          )
+          .catch(
+            function (t) {
+              if (!o.isString(t) && o.isJsonString(t.responseText)) {
+                var i = JSON.parse(t.responseText).error.code;
+                if (i.toUpperCase() === c) {
+                  var e = this.getI18nText("noWarehouseOrderAvailableMsg");
+                  a.information(e);
+                  this.playAudio(r.INFO);
+                } else if (i.toUpperCase() === h) {
+                  var e = this.getI18nText("documentaryBatchesNotSupportedMsg");
+                  a.information(e);
+                  this.playAudio(r.INFO);
+                } else {
+                  this.playAudio(r.ERROR);
+                }
+              } else {
+                this.playAudio(r.ERROR);
+              }
+              this.setBusy(false);
+            }.bind(this),
+          );
+      },
+    });
+  },
+);
 //# sourceMappingURL=Drop.controller.js.map

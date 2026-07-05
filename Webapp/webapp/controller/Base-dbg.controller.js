@@ -15,7 +15,7 @@ sap.ui.define([
 ], function (Controller, ValueState, PickCartLayout, LogonResource, OData, Global, Const, Util, MessagePopover, MessageItem) {
 	"use strict";
 	var dummyId = "dummy-input";
-	return Controller.extend("scm.ewm.pickcarts1.controller.Base", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.Base", {
 		onInit: function () {
 			if (this.createPickcart) {
 				PickCartLayout.registLayoutChangeCallback(this.createPickcart.bind(this));
@@ -503,7 +503,7 @@ sap.ui.define([
 			var oView = this.getView();
 			if (!this._oTerminationDialog) {
 				this.removeDuplicatedId();
-				this._oTerminationDialog = sap.ui.xmlfragment(sDialogId, "scm.ewm.pickcarts1.view.dialog.TerminationDialog", this);
+				this._oTerminationDialog = sap.ui.xmlfragment(sDialogId, "zscm.ewm.pickcarts1.view.dialog.TerminationDialog", this);
 				oView.addDependent(this._oTerminationDialog);
 			}
 			return this._oTerminationDialog;
@@ -562,7 +562,7 @@ sap.ui.define([
 			var oView = this.getView();
 			if (!this._oBringHUToDestinationDialog) {
 				this.removeDuplicatedId();
-				this._oBringHUToDestinationDialog = sap.ui.xmlfragment(sDialogId, "scm.ewm.pickcarts1.view.dialog.BringHUToDestinationDialog", this);
+				this._oBringHUToDestinationDialog = sap.ui.xmlfragment(sDialogId, "zscm.ewm.pickcarts1.view.dialog.BringHUToDestinationDialog", this);
 				oView.addDependent(this._oBringHUToDestinationDialog);
 			}
 			return this._oBringHUToDestinationDialog;

@@ -5,7 +5,7 @@
 -->
 <mvc:View id="processtasks-view" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
 	xmlns:form="sap.ui.layout.form" xmlns:suite="sap.suite.ui.commons" xmlns:html="http://www.w3.org/1999/xhtml"
-	controllerName="scm.ewm.pickcarts1.controller.ProcessWarehouseTasks">
+	controllerName="zscm.ewm.pickcarts1.controller.ProcessWarehouseTasks">
 	<Page id="processtasks-page" showHeader="false" backgroundDesign="Solid">
 		<subHeader>
 			<Toolbar id="processtasks-subheader-toolbar" design="Transparent">

@@ -12,7 +12,7 @@
 				text="{parts:[{path: 'serialNum>/forTasksPicking'}, {path: 'local>/currentWarehouseTaskGroup/baseUom'}], formatter:'.formatSerialNumQtyDisplay'}"
 				class="sapUiSmallMarginTop"/>
 		</HBox>
-		<core:Fragment fragmentName="scm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"></core:Fragment>
+		<core:Fragment fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"></core:Fragment>
 		<footer>
 			<Toolbar id="sn-footer-toolbar">
 				<ToolbarSpacer id="sn-footer-toolbarspacer"/>

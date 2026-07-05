@@ -23,7 +23,7 @@
 						<layout:GridData id="lowqtycheck-grid-actualqtyinput" span="L10 M10 S10"/>
 					</layoutData>
 				</Input>
-				<core:Fragment id="lowQtyCheck" fragmentName="scm.ewm.pickcarts1.view.dialog.SerialNumberListForLowQtyCheck" type="XML"/>
+				<core:Fragment id="lowQtyCheck" fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberListForLowQtyCheck" type="XML"/>
 			</layout:Grid>
 		</form:SimpleForm>
 		<buttons>
