@@ -1,5 +1,0 @@
-/*
- * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
- */
-sap.ui.define([],function(){"use strict";var r={};r.render=function(r,e){var t=r;t.write("<div");t.writeControlData(e);t.write(">");var i=e.getItems();for(var n=0;n<i.length;n++){t.renderControl(i[n])}t.write("</div>")};return r},true);
-//# sourceMappingURL=AudioListRenderer.js.map
