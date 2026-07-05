@@ -4,13 +4,13 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/Device",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/PickCartConnection",
-	"scm/ewm/pickcarts1/model/ProcessWarehouseTasks",
-	"scm/ewm/pickcarts1/model/Drop",
-	"scm/ewm/pickcarts1/model/PickCartLayout",
-	"scm/ewm/pickcarts1/model/LogonResource"
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/PickCartConnection",
+	"zscm/ewm/pickcarts1/model/ProcessWarehouseTasks",
+	"zscm/ewm/pickcarts1/model/Drop",
+	"zscm/ewm/pickcarts1/model/PickCartLayout",
+	"zscm/ewm/pickcarts1/model/LogonResource"
 	
 ], function(JSONModel, Device, Global, OData, PickCartConnection, ProcessWarehouseTasks, Drop, PickcartLayout, LogonResource) {
 	"use strict";

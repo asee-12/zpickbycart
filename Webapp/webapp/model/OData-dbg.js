@@ -2,11 +2,11 @@
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.define([
-	"scm/ewm/pickcarts1/model/PickCartLayout",
+	"zscm/ewm/pickcarts1/model/PickCartLayout",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
-	"scm/ewm/pickcarts1/utils/Util",
-	"scm/ewm/pickcarts1/model/Global"
+	"zscm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/model/Global"
 ], function (PickCartLayout, Filter, FilterOperator, Util, Global) {
 	"use strict";
 	// odata model helper

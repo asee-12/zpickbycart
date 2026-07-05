@@ -3,13 +3,13 @@
  */
 sap.ui.define(
   [
-    "scm/ewm/pickcarts1/controller/Base.controller",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Drop",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/controller/Base.controller",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Drop",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/m/MessageBox",
   ],
   function (t, i, e, s, n, r, o, a) {

@@ -3,9 +3,9 @@
  */
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/utils/Const",
-	"scm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Util",
 	"sap/ui/core/format/NumberFormat"
 ], function(JSONModel, Global, Const, Util, NumberFormat) {
 	"use strict";

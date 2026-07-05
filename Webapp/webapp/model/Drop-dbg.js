@@ -4,8 +4,8 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/ValueState",
-	"scm/ewm/pickcarts1/utils/Const",
-	"scm/ewm/pickcarts1/utils/Util"
+	"zscm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Util"
 ], function (JSONModel, ValueState, Const, Util) {
 	"use strict";
 	var _oModel;

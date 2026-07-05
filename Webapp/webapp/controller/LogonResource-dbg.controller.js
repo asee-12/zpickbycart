@@ -5,11 +5,11 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/ValueState",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/LogonResource",
-	"scm/ewm/pickcarts1/utils/Const",
-	"scm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/LogonResource",
+	"zscm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Util",
 	"sap/ui/model/Filter",
 	"sap/ui/model/FilterOperator",
 	"sap/m/MessageBox"
@@ -19,7 +19,7 @@ sap.ui.define([
 	var dummyId = "dummy-input";
 	var resourceId = "pbc---logon--EWMResource";
 	var queue_select_id = "id-queue-select";
-	return Controller.extend("scm.ewm.pickcarts1.controller.LogonResource", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.LogonResource", {
 
 		onInit: function () {
 			this.initModes();

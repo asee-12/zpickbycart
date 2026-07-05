@@ -5,7 +5,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/tl/ewm/lib/reuses1/components/base/Component",
 	"sap/ui/Device",
-	"scm/ewm/pickcarts1/model/Models"
+	"zscm/ewm/pickcarts1/model/Models"
 ], function (UIComponent, BaseComponent, Device, Models) {
 	"use strict";
 	var connectionViewId = "---connection-view--";

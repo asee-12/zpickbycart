@@ -4,7 +4,7 @@
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/model/BindingMode",
-	"scm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Const",
 	"sap/m/MessageBox"
 ], function (JSONModel, BindingMode, Const, MessageBox) {
 	"use strict";

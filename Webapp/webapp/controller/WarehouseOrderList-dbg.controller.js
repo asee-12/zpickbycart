@@ -3,10 +3,10 @@
  */
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/utils/Const",
-	"scm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Util",
 	"sap/ui/core/ValueState",
 	"sap/ui/model/Filter",
 	"sap/ui/model/Sorter",
@@ -14,7 +14,7 @@ sap.ui.define([
 	"sap/ui/model/FilterOperator"
 ], function (Controller, OData, Global, Const, Util, ValueState, Filter, Sorter, JSONModel, FilterOperator) {
 	"use strict";
-	return Controller.extend("scm.ewm.pickcarts1.controller.WarehouseOrderList", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.WarehouseOrderList", {
 		onInit: function () {
 			this.table = this.getTable();
 			this.oPersonalizationService = sap.ushell.Container.getService("Personalization");
@@ -60,9 +60,9 @@ sap.ui.define([
 			} else {
 				aFilters = [oResourceNumberFilter, oWarehouseNumberFilter, oQueueFilter];
 			}
-			this.oPersonalizationService.getContainer("scm.ewm.pickcarts1")
+			this.oPersonalizationService.getContainer("zscm.ewm.pickcarts1")
 				.fail(function () {
-					this.oContainer = this.oPersonalizationService.createEmptyContainer("scm.ewm.pickcarts1");
+					this.oContainer = this.oPersonalizationService.createEmptyContainer("zscm.ewm.pickcarts1");
 					this.getTable().bindItems({
 						path: "/WarehouseOrderSet",
 						template: this.oTableTemplate,
@@ -98,7 +98,7 @@ sap.ui.define([
 		},
 		handleSortingDialogButtonPressed: function (oEvent) {
 			if (!this._oDialog) {
-				this._oDialog = sap.ui.xmlfragment("scm.ewm.pickcarts1.view.dialog.SortWarehouseOrder", this);
+				this._oDialog = sap.ui.xmlfragment("zscm.ewm.pickcarts1.view.dialog.SortWarehouseOrder", this);
 			}
 			this.getView().addDependent(this._oDialog);
 			if (this.oContainer.getItemValue("sortKey")) {

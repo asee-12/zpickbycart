@@ -2,15 +2,15 @@
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.define([
-	"scm/ewm/pickcarts1/controller/Base.controller",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/model/ProcessWarehouseTasks",
-	"scm/ewm/pickcarts1/model/SerialNumber",
-	"scm/ewm/pickcarts1/model/PickCartLayout",
-	"scm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/controller/Base.controller",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/model/ProcessWarehouseTasks",
+	"zscm/ewm/pickcarts1/model/SerialNumber",
+	"zscm/ewm/pickcarts1/model/PickCartLayout",
+	"zscm/ewm/pickcarts1/utils/Const",
 	"sap/ui/core/ValueState",
-	"scm/ewm/pickcarts1/utils/Util"
+	"zscm/ewm/pickcarts1/utils/Util"
 ], function (Controller, ODataHelper, Global, ProcessWarehouseTasks, SerialNumber, PickCartLayout, Const, ValueState, Util) {
 	"use strict";
 	var sourceBinId = "source-bin-input";
@@ -24,7 +24,7 @@ sap.ui.define([
 	var serialNumberForQtyAdjustmentId = "quantityAdjustment--id-input-serialNumber";
 	var splitOKButtonId = "splitting-ok-btn";
 
-	return Controller.extend("scm.ewm.pickcarts1.controller.ProcessWarehouseTasks", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.ProcessWarehouseTasks", {
 		sRouteName: "processTasks",
 		aManualInput: [{
 			id: sourceBinId
@@ -981,7 +981,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oDialog = oView.byId("partialDenialDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.PartialDenialDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.PartialDenialDialog", this);
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
@@ -1063,7 +1063,7 @@ sap.ui.define([
 			var oDialog = oView.byId("fullDenialDialog");
 
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.FullDenialDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.FullDenialDialog", this);
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
@@ -1225,7 +1225,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oDialog = oView.byId("splittingFromDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.SplittingFromDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.SplittingFromDialog", this);
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
@@ -1407,7 +1407,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oDialog = oView.byId("splittingToDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.SplittingToDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.SplittingToDialog", this);
 				oView.addDependent(oDialog);
 				this.preventEscap(oDialog);
 			}
@@ -1493,7 +1493,7 @@ sap.ui.define([
 			var oDialog = oView.byId("differenceDialog");
 			if (!oDialog) {
 
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.DifferenceDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.DifferenceDialog", this);
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
@@ -1874,7 +1874,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oDialog = oView.byId("lowQuantityCheckDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.LowQuantityCheckDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.LowQuantityCheckDialog", this);
 				oView.addDependent(oDialog);
 				this.preventEscap(oDialog);
 			}
@@ -2085,7 +2085,7 @@ sap.ui.define([
 			var oView = this.getView();
 			var oDialog = oView.byId("quantityAdjustmentDialog");
 			if (!oDialog) {
-				oDialog = sap.ui.xmlfragment(oView.getId(), "scm.ewm.pickcarts1.view.dialog.QuantityAdjustmentDialog", this);
+				oDialog = sap.ui.xmlfragment(oView.getId(), "zscm.ewm.pickcarts1.view.dialog.QuantityAdjustmentDialog", this);
 				oView.addDependent(oDialog);
 			}
 			this.updateInputWithDefault("quantityAdjustment-input", "");
@@ -2237,7 +2237,7 @@ sap.ui.define([
 		/******* serial number popover begin*********/
 		getSerialNumberPopover: function () {
 			if (!this._oSerialNumberPopover) {
-				this._oSerialNumberPopover = sap.ui.xmlfragment("sn_popover", "scm.ewm.pickcarts1.view.dialog.SerialNumberPopover", this);
+				this._oSerialNumberPopover = sap.ui.xmlfragment("sn_popover", "zscm.ewm.pickcarts1.view.dialog.SerialNumberPopover", this);
 				this.getView().addDependent(this._oSerialNumberPopover);
 			}
 			this.oSNInput = sap.ui.core.Fragment.byId("sn_popover", serialNumberInputId);

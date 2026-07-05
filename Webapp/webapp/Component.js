@@ -6,7 +6,7 @@ sap.ui.define(
     "sap/ui/core/UIComponent",
     "sap/tl/ewm/lib/reuses1/components/base/Component",
     "sap/ui/Device",
-    "scm/ewm/pickcarts1/model/Models",
+    "zscm/ewm/pickcarts1/model/Models",
   ],
   function (e, t, s, i) {
     "use strict";
@@ -14,7 +14,7 @@ sap.ui.define(
     var o = "---processtasks-view--";
     var a = "---drop-view--";
     var r = "column-cell-button";
-    return t.extend("zscm.ewm.pickcarts1.Component", {
+    return t.extend("scm.ewm.pickcarts1.Component", {
       metadata: { manifest: "json" },
       initialPage: "Main",
       _hasDirtyPage: function () {

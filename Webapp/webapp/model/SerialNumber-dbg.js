@@ -3,7 +3,7 @@
  */
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
-	"scm/ewm/pickcarts1/utils/Util"
+	"zscm/ewm/pickcarts1/utils/Util"
 ], function(JSONModel, Util) {
 	"use strict";
 	var _oModel;

@@ -1,5 +1,280 @@
 /*
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
-sap.ui.define(["scm/ewm/pickcarts1/controller/Base.controller","scm/ewm/pickcarts1/model/OData","scm/ewm/pickcarts1/model/Global","scm/ewm/pickcarts1/model/PickCartConnection","scm/ewm/pickcarts1/model/PickCartLayout","sap/ui/core/ValueState","sap/m/Dialog","sap/m/ButtonType","scm/ewm/pickcarts1/utils/Util","scm/ewm/pickcarts1/utils/Const"],function(t,i,e,n,s,o,a,r,u,l){"use strict";var c="connection-hu-input";var d="connection-logical-position-input";return t.extend("scm.ewm.pickcarts1.controller.PickCartConnection",{sRouteName:"connection",aManualInput:[{id:c},{id:d}],init:function(){this.setModel(n.init(),"local");this.getErrorMessagePopover().setModel(n.init())},onRouteMatched:function(t){n.clearData();i.getPickcartConnectionData(t.warehouseOrder).then(function(o){var a=o[0];var r=o[1];s.setData(a);n.setHandlingUnit(r);var l=n.getConnectedPositions();if(l.length>0){s.setStatusForPreparationByIds(l,1)}this.moveFocus();this.setBusy(false);if(!u.isEmpty(e.getQueue())&&!u.isEmpty(e.getWoQueue())){if(e.getQueue().toUpperCase()!==e.getWoQueue().toUpperCase()){var c=this.getI18nText("hasWoFromdifferentQueue",[i.getResourceNumber(),t.warehouseOrder,e.getWoQueue()]);this.displayWarningInPopover(c,n)}}}.bind(this)).catch(function(){n.clearHandlingUnits();this.setBusy(false);this.playAudio(l.ERROR)}.bind(this))},onHandlingUnitChange:function(t){var e=u.trim(t.getParameter("newValue"));e=e.toUpperCase();this.setBusy(true);i.convertHUID(e).then(function(t){e=t.Huident;this.setInputValue(c,e);var i;var n=s.getPositionInfoByLable(e);var o=this.getI18nText("scanLogicPostionWhenInputPickHU",[e]);if(!u.isEmpty(e)){i=this.getHandlingUnitVerifyPromise(e);this.verify(i,c,function t(){if(n){this.updateInputWithWarning(c,o,e);this.playAudio(l.WARNING)}}.bind(this))}else{this.focusTo(c);this.updateInputWithDefault(c,"")}}.bind(this)).finally(function(){this.setBusy(false)}.bind(this))},getHandlingUnitVerifyPromise:function(t){var s=n.getCurrentHandlingUnit();var o=this.getI18nText("handlingUnitHasBeenOccupiedMsg",[t]);var a;if(n.isHandlingUnitReserved(t)){a=new Promise(function(t,i){i(o)})}else if(n.isContainsSpecialCharacter(t)){a=new Promise(function(t,i){i()})}else{a=i.validateHandlingUnit(e.getWONumber(),s.HndlgUnitNumberInWhseOrder,t)}return a},onLogicalPositionChange:function(t){var i=u.trim(t.getParameter("newValue"));var e=s.getPositionInfoByLable(i);var o=this.getI18nText("logicalPositionHasBeenOccupiedMsg",[i]);var a=new Promise(function(t,i){if(!e){i()}else if(n.isLogicalPositionReserved(e.HandlingUnitLogicalPosition)){i(o)}else{n.updatePositionId(e.HandlingUnitLogicalPosition);t()}});this.verify(a,d)},onSelectPosition:function(t){var i=t.getSource().getType();if(i===r.Emphasized){var e=t.getSource().getText();var o=s.getPositionByLable(e);n.debundPreparation(o,e);if(!this._oDialog){this._oDialog=sap.ui.xmlfragment("scm.ewm.pickcarts1.view.dialog.DebundleHUAndPosition",this)}this.getView().addDependent(this._oDialog);this._oDialog.open()}},formatMessage:function(t,i,e){var n=this.getModel("i18n");return n.getResourceBundle().getText(t,[i,e])},closeDialog:function(){n.debundFinished();this._oDialog.setBusy(false);this._oDialog.close()},onResetPressed:function(){this.setBusy(true);i.resetConnectionData().then(function(){var t=n.getAllLogicalPositions();s.setStatusForPreparationByIds(t,0);n.resetAllHandlingUnits();this.updateInputWithDefault(c,"");this.updateInputWithDefault(d,"");this.moveFocus();this.setBusy(false)}.bind(this)).catch(function(){this.setBusy(false);this.playAudio(l.ERROR)}.bind(this))},debundlePosition:function(){var t=n.getDebundleHandlingUnit();var i=t.HandlingUnitLogicalPosition;var e=t.HandlingUnitNumber;n.clearHandlingUnit(t);this._oDialog.setBusy(true);this.confirmTask(t,true).then(function(){this.closeDialog();this.updateInputWithDefault(c,"");this.updateInputWithDefault(d,"");this.moveFocus();this.playAudio(l.INFO)}.bind(this)).catch(function(){this.setBusy(false);this.closeDialog();jQuery.sap.log.error("debund position error");n.restoreHandlingUnit(t,e,i);this.playAudio(l.ERROR)}.bind(this))},formatProgressPercentValue:function(t,i){if(i.length>0){return t*100/i.length}return 0},formatProgressDisplayValue:function(t,i){return t+"/"+i.length+" HUs"},formatValueState:function(t){var i=o.None;if(t==="INVALID"){i=o.Error}return i},formatPackagingMaterial:function(t,i){var e=t;if(u.isEmpty(t)){e=i}return e},onNavToProcessTasks:function(){e.setAppProgress(3);this.navTo("processTasks",{warehouseOrder:e.getWONumber()})},confirmTask:function(t,e){this.setBusy(true);if(!t){t=n.getCurrentHandlingUnit()}return i.submitConnectiondData(t).then(function(){var t;if(e){var i=n.getDebundldPosition();t=s.getPositionInfoByLable(i);s.updatePositionStatus(t,0)}else{var o=n.getCurrentHandlingUnitLogicalPosition();t=s.getPositionInfoById(o);s.updatePositionStatus(t,1)}n.updateConnectionProgress(!e);n.prepareHandlingUnit();this.updateInputWithDefault(c,"");this.updateInputWithDefault(d,"");if(n.isHandlingUnitsReady()){this.onNavToProcessTasks()}this.setBusy(false);this.moveFocus();this.playAudio(l.INFO)}.bind(this)).catch(function(){this.setBusy(false);this.playAudio(l.ERROR)}.bind(this))}})});
+sap.ui.define(
+  [
+    "zscm/ewm/pickcarts1/controller/Base.controller",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/PickCartConnection",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "sap/ui/core/ValueState",
+    "sap/m/Dialog",
+    "sap/m/ButtonType",
+    "zscm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/utils/Const",
+  ],
+  function (t, i, e, n, s, o, a, r, u, l) {
+    "use strict";
+    var c = "connection-hu-input";
+    var d = "connection-logical-position-input";
+    return t.extend("zscm.ewm.pickcarts1.controller.PickCartConnection", {
+      sRouteName: "connection",
+      aManualInput: [{ id: c }, { id: d }],
+      init: function () {
+        this.setModel(n.init(), "local");
+        this.getErrorMessagePopover().setModel(n.init());
+      },
+      onRouteMatched: function (t) {
+        n.clearData();
+        i.getPickcartConnectionData(t.warehouseOrder)
+          .then(
+            function (o) {
+              var a = o[0];
+              var r = o[1];
+              s.setData(a);
+              n.setHandlingUnit(r);
+              var l = n.getConnectedPositions();
+              if (l.length > 0) {
+                s.setStatusForPreparationByIds(l, 1);
+              }
+              this.moveFocus();
+              this.setBusy(false);
+              if (!u.isEmpty(e.getQueue()) && !u.isEmpty(e.getWoQueue())) {
+                if (
+                  e.getQueue().toUpperCase() !== e.getWoQueue().toUpperCase()
+                ) {
+                  var c = this.getI18nText("hasWoFromdifferentQueue", [
+                    i.getResourceNumber(),
+                    t.warehouseOrder,
+                    e.getWoQueue(),
+                  ]);
+                  this.displayWarningInPopover(c, n);
+                }
+              }
+            }.bind(this),
+          )
+          .catch(
+            function () {
+              n.clearHandlingUnits();
+              this.setBusy(false);
+              this.playAudio(l.ERROR);
+            }.bind(this),
+          );
+      },
+      onHandlingUnitChange: function (t) {
+        var e = u.trim(t.getParameter("newValue"));
+        e = e.toUpperCase();
+        this.setBusy(true);
+        i.convertHUID(e)
+          .then(
+            function (t) {
+              e = t.Huident;
+              this.setInputValue(c, e);
+              var i;
+              var n = s.getPositionInfoByLable(e);
+              var o = this.getI18nText("scanLogicPostionWhenInputPickHU", [e]);
+              if (!u.isEmpty(e)) {
+                i = this.getHandlingUnitVerifyPromise(e);
+                this.verify(
+                  i,
+                  c,
+                  function t() {
+                    if (n) {
+                      this.updateInputWithWarning(c, o, e);
+                      this.playAudio(l.WARNING);
+                    }
+                  }.bind(this),
+                );
+              } else {
+                this.focusTo(c);
+                this.updateInputWithDefault(c, "");
+              }
+            }.bind(this),
+          )
+          .finally(
+            function () {
+              this.setBusy(false);
+            }.bind(this),
+          );
+      },
+      getHandlingUnitVerifyPromise: function (t) {
+        var s = n.getCurrentHandlingUnit();
+        var o = this.getI18nText("handlingUnitHasBeenOccupiedMsg", [t]);
+        var a;
+        if (n.isHandlingUnitReserved(t)) {
+          a = new Promise(function (t, i) {
+            i(o);
+          });
+        } else if (n.isContainsSpecialCharacter(t)) {
+          a = new Promise(function (t, i) {
+            i();
+          });
+        } else {
+          a = i.validateHandlingUnit(
+            e.getWONumber(),
+            s.HndlgUnitNumberInWhseOrder,
+            t,
+          );
+        }
+        return a;
+      },
+      onLogicalPositionChange: function (t) {
+        var i = u.trim(t.getParameter("newValue"));
+        var e = s.getPositionInfoByLable(i);
+        var o = this.getI18nText("logicalPositionHasBeenOccupiedMsg", [i]);
+        var a = new Promise(function (t, i) {
+          if (!e) {
+            i();
+          } else if (
+            n.isLogicalPositionReserved(e.HandlingUnitLogicalPosition)
+          ) {
+            i(o);
+          } else {
+            n.updatePositionId(e.HandlingUnitLogicalPosition);
+            t();
+          }
+        });
+        this.verify(a, d);
+      },
+      onSelectPosition: function (t) {
+        var i = t.getSource().getType();
+        if (i === r.Emphasized) {
+          var e = t.getSource().getText();
+          var o = s.getPositionByLable(e);
+          n.debundPreparation(o, e);
+          if (!this._oDialog) {
+            this._oDialog = sap.ui.xmlfragment(
+              "zscm.ewm.pickcarts1.view.dialog.DebundleHUAndPosition",
+              this,
+            );
+          }
+          this.getView().addDependent(this._oDialog);
+          this._oDialog.open();
+        }
+      },
+      formatMessage: function (t, i, e) {
+        var n = this.getModel("i18n");
+        return n.getResourceBundle().getText(t, [i, e]);
+      },
+      closeDialog: function () {
+        n.debundFinished();
+        this._oDialog.setBusy(false);
+        this._oDialog.close();
+      },
+      onResetPressed: function () {
+        this.setBusy(true);
+        i.resetConnectionData()
+          .then(
+            function () {
+              var t = n.getAllLogicalPositions();
+              s.setStatusForPreparationByIds(t, 0);
+              n.resetAllHandlingUnits();
+              this.updateInputWithDefault(c, "");
+              this.updateInputWithDefault(d, "");
+              this.moveFocus();
+              this.setBusy(false);
+            }.bind(this),
+          )
+          .catch(
+            function () {
+              this.setBusy(false);
+              this.playAudio(l.ERROR);
+            }.bind(this),
+          );
+      },
+      debundlePosition: function () {
+        var t = n.getDebundleHandlingUnit();
+        var i = t.HandlingUnitLogicalPosition;
+        var e = t.HandlingUnitNumber;
+        n.clearHandlingUnit(t);
+        this._oDialog.setBusy(true);
+        this.confirmTask(t, true)
+          .then(
+            function () {
+              this.closeDialog();
+              this.updateInputWithDefault(c, "");
+              this.updateInputWithDefault(d, "");
+              this.moveFocus();
+              this.playAudio(l.INFO);
+            }.bind(this),
+          )
+          .catch(
+            function () {
+              this.setBusy(false);
+              this.closeDialog();
+              jQuery.sap.log.error("debund position error");
+              n.restoreHandlingUnit(t, e, i);
+              this.playAudio(l.ERROR);
+            }.bind(this),
+          );
+      },
+      formatProgressPercentValue: function (t, i) {
+        if (i.length > 0) {
+          return (t * 100) / i.length;
+        }
+        return 0;
+      },
+      formatProgressDisplayValue: function (t, i) {
+        return t + "/" + i.length + " HUs";
+      },
+      formatValueState: function (t) {
+        var i = o.None;
+        if (t === "INVALID") {
+          i = o.Error;
+        }
+        return i;
+      },
+      formatPackagingMaterial: function (t, i) {
+        var e = t;
+        if (u.isEmpty(t)) {
+          e = i;
+        }
+        return e;
+      },
+      onNavToProcessTasks: function () {
+        e.setAppProgress(3);
+        this.navTo("processTasks", { warehouseOrder: e.getWONumber() });
+      },
+      confirmTask: function (t, e) {
+        this.setBusy(true);
+        if (!t) {
+          t = n.getCurrentHandlingUnit();
+        }
+        return i
+          .submitConnectiondData(t)
+          .then(
+            function () {
+              var t;
+              if (e) {
+                var i = n.getDebundldPosition();
+                t = s.getPositionInfoByLable(i);
+                s.updatePositionStatus(t, 0);
+              } else {
+                var o = n.getCurrentHandlingUnitLogicalPosition();
+                t = s.getPositionInfoById(o);
+                s.updatePositionStatus(t, 1);
+              }
+              n.updateConnectionProgress(!e);
+              n.prepareHandlingUnit();
+              this.updateInputWithDefault(c, "");
+              this.updateInputWithDefault(d, "");
+              if (n.isHandlingUnitsReady()) {
+                this.onNavToProcessTasks();
+              }
+              this.setBusy(false);
+              this.moveFocus();
+              this.playAudio(l.INFO);
+            }.bind(this),
+          )
+          .catch(
+            function () {
+              this.setBusy(false);
+              this.playAudio(l.ERROR);
+            }.bind(this),
+          );
+      },
+    });
+  },
+);
 //# sourceMappingURL=PickCartConnection.controller.js.map

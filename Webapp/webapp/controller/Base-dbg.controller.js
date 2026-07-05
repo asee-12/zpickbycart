@@ -4,12 +4,12 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/core/ValueState",
-	"scm/ewm/pickcarts1/model/PickCartLayout",
-	"scm/ewm/pickcarts1/model/LogonResource",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/utils/Const",
-	"scm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/model/PickCartLayout",
+	"zscm/ewm/pickcarts1/model/LogonResource",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/utils/Const",
+	"zscm/ewm/pickcarts1/utils/Util",
 	"sap/m/MessagePopover",
 	"sap/m/MessageItem"
 ], function (Controller, ValueState, PickCartLayout, LogonResource, OData, Global, Const, Util, MessagePopover, MessageItem) {

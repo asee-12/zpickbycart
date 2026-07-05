@@ -2,21 +2,21 @@
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.define([
-	"scm/ewm/pickcarts1/controller/Base.controller",
-	"scm/ewm/pickcarts1/model/OData",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/model/PickCartConnection",
-	"scm/ewm/pickcarts1/model/PickCartLayout",
+	"zscm/ewm/pickcarts1/controller/Base.controller",
+	"zscm/ewm/pickcarts1/model/OData",
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/model/PickCartConnection",
+	"zscm/ewm/pickcarts1/model/PickCartLayout",
 	"sap/ui/core/ValueState",
 	"sap/m/Dialog",
 	"sap/m/ButtonType",
-	"scm/ewm/pickcarts1/utils/Util",
-	"scm/ewm/pickcarts1/utils/Const"
+	"zscm/ewm/pickcarts1/utils/Util",
+	"zscm/ewm/pickcarts1/utils/Const"
 ], function (Controller, ODataHelper, Global, PickCartConnection, PickCartLayout, ValueState, Dialog, ButtonType, Util, Const) {
 	"use strict";
 	var pickHUId = "connection-hu-input";
 	var logicalPositionId = "connection-logical-position-input";
-	return Controller.extend("scm.ewm.pickcarts1.controller.PickCartConnection", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.PickCartConnection", {
 		sRouteName: "connection",
 		aManualInput: [{
 			id: pickHUId
@@ -140,7 +140,7 @@ sap.ui.define([
 
 				PickCartConnection.debundPreparation(sLogicalPosition, sLogicalPositionLabel);
 				if (!this._oDialog) {
-					this._oDialog = sap.ui.xmlfragment("scm.ewm.pickcarts1.view.dialog.DebundleHUAndPosition", this);
+					this._oDialog = sap.ui.xmlfragment("zscm.ewm.pickcarts1.view.dialog.DebundleHUAndPosition", this);
 				}
 				this.getView().addDependent(this._oDialog);
 				this._oDialog.open();

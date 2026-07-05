@@ -3,12 +3,12 @@
  */
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"scm/ewm/pickcarts1/model/Global",
-	"scm/ewm/pickcarts1/control/Audio"
+	"zscm/ewm/pickcarts1/model/Global",
+	"zscm/ewm/pickcarts1/control/Audio"
 ], function (Controller, Global, Audio) {
 	"use strict";
 	var audioId = "audio-player";
-	return Controller.extend("scm.ewm.pickcarts1.controller.Main", {
+	return Controller.extend("zscm.ewm.pickcarts1.controller.Main", {
 		onInit: function () {
 			this.getView().setModel(Global.init(), "global");
 		},

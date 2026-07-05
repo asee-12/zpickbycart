@@ -29,3 +29,8 @@ server:
       configuration:
         component: zscm.ewm.pickcarts1
         ui5Theme: sap_horizon
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**

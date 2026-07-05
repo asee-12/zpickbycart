@@ -4,8 +4,8 @@
 sap.ui.define(
   [
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Const",
     "sap/ui/core/format/DateFormat",
     "sap/ui/core/format/NumberFormat",
   ],

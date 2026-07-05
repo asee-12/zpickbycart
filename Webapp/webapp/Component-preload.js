@@ -1,14 +1,14 @@
-//@ui5-bundle scm/ewm/pickcarts1/Component-preload.js
+//@ui5-bundle zscm/ewm/pickcarts1/Component-preload.js
 /*
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/Component",
+  "zscm/ewm/pickcarts1/Component",
   [
     "sap/ui/core/UIComponent",
     "sap/tl/ewm/lib/reuses1/components/base/Component",
     "sap/ui/Device",
-    "scm/ewm/pickcarts1/model/Models",
+    "zscm/ewm/pickcarts1/model/Models",
   ],
   function (e, t, s, i) {
     "use strict";
@@ -66,7 +66,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/control/Audio",
+  "zscm/ewm/pickcarts1/control/Audio",
   ["sap/ui/core/Control"],
   function (e) {
     "use strict";
@@ -92,7 +92,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/control/AudioList",
+  "zscm/ewm/pickcarts1/control/AudioList",
   ["sap/ui/core/Control"],
   function (e) {
     "use strict";
@@ -132,7 +132,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/control/AudioListRenderer",
+  "zscm/ewm/pickcarts1/control/AudioListRenderer",
   [],
   function () {
     "use strict";
@@ -156,7 +156,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/control/AudioRenderer",
+  "zscm/ewm/pickcarts1/control/AudioRenderer",
   [],
   function () {
     "use strict";
@@ -177,16 +177,16 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/Base.controller",
+  "zscm/ewm/pickcarts1/controller/Base.controller",
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
-    "scm/ewm/pickcarts1/model/LogonResource",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/model/LogonResource",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/m/MessagePopover",
     "sap/m/MessageItem",
   ],
@@ -800,15 +800,15 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/Drop.controller",
+  "zscm/ewm/pickcarts1/controller/Drop.controller",
   [
-    "scm/ewm/pickcarts1/controller/Base.controller",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Drop",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/controller/Base.controller",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Drop",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/m/MessageBox",
   ],
   function (t, i, e, s, n, r, o, a) {
@@ -1248,16 +1248,16 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/LogonResource.controller",
+  "zscm/ewm/pickcarts1/controller/LogonResource.controller",
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/LogonResource",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/LogonResource",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/m/MessageBox",
@@ -1585,11 +1585,11 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/Main.controller",
+  "zscm/ewm/pickcarts1/controller/Main.controller",
   [
     "sap/ui/core/mvc/Controller",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/control/Audio",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/control/Audio",
   ],
   function (t, i, e) {
     "use strict";
@@ -1612,18 +1612,18 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/PickCartConnection.controller",
+  "zscm/ewm/pickcarts1/controller/PickCartConnection.controller",
   [
-    "scm/ewm/pickcarts1/controller/Base.controller",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/PickCartConnection",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/controller/Base.controller",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/PickCartConnection",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
     "sap/ui/core/ValueState",
     "sap/m/Dialog",
     "sap/m/ButtonType",
-    "scm/ewm/pickcarts1/utils/Util",
-    "scm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/utils/Const",
   ],
   function (t, i, e, n, s, o, a, r, u, l) {
     "use strict";
@@ -1892,17 +1892,17 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/ProcessWarehouseTasks.controller",
+  "zscm/ewm/pickcarts1/controller/ProcessWarehouseTasks.controller",
   [
-    "scm/ewm/pickcarts1/controller/Base.controller",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/ProcessWarehouseTasks",
-    "scm/ewm/pickcarts1/model/SerialNumber",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
-    "scm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/controller/Base.controller",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/ProcessWarehouseTasks",
+    "zscm/ewm/pickcarts1/model/SerialNumber",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/utils/Const",
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/utils/Util",
   ],
   function (t, e, i, n, s, a, r, u, o) {
     "use strict";
@@ -4295,13 +4295,13 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/controller/WarehouseOrderList.controller",
+  "zscm/ewm/pickcarts1/controller/WarehouseOrderList.controller",
   [
     "sap/ui/core/mvc/Controller",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/ui/core/ValueState",
     "sap/ui/model/Filter",
     "sap/ui/model/Sorter",
@@ -4497,12 +4497,12 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/localService/mockserver",
+  "zscm/ewm/pickcarts1/localService/mockserver",
   ["sap/ui/core/util/MockServer"],
   function (e) {
     "use strict";
     var t,
-      s = "scm/ewm/pickcarts1/",
+      s = "zscm/ewm/pickcarts1/",
       a = s + "localService/mockdata";
     return {
       init: function () {
@@ -5022,12 +5022,12 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/Drop",
+  "zscm/ewm/pickcarts1/model/Drop",
   [
     "sap/ui/model/json/JSONModel",
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
   ],
   function (t, r, n, i) {
     "use strict";
@@ -5309,11 +5309,11 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/Global",
+  "zscm/ewm/pickcarts1/model/Global",
   [
     "sap/ui/model/json/JSONModel",
     "sap/ui/model/BindingMode",
-    "scm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Const",
     "sap/m/MessageBox",
   ],
   function (e, r, t, o) {
@@ -5435,7 +5435,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/LogonResource",
+  "zscm/ewm/pickcarts1/model/LogonResource",
   ["sap/ui/model/json/JSONModel", "sap/ui/core/ValueState"],
   function (e, t) {
     "use strict";
@@ -5475,17 +5475,17 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/Models",
+  "zscm/ewm/pickcarts1/model/Models",
   [
     "sap/ui/model/json/JSONModel",
     "sap/ui/Device",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/model/OData",
-    "scm/ewm/pickcarts1/model/PickCartConnection",
-    "scm/ewm/pickcarts1/model/ProcessWarehouseTasks",
-    "scm/ewm/pickcarts1/model/Drop",
-    "scm/ewm/pickcarts1/model/PickCartLayout",
-    "scm/ewm/pickcarts1/model/LogonResource",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/model/OData",
+    "zscm/ewm/pickcarts1/model/PickCartConnection",
+    "zscm/ewm/pickcarts1/model/ProcessWarehouseTasks",
+    "zscm/ewm/pickcarts1/model/Drop",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/model/LogonResource",
   ],
   function (e, s, c, o, t, i, r, a, m) {
     "use strict";
@@ -5513,13 +5513,13 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/OData",
+  "zscm/ewm/pickcarts1/model/OData",
   [
-    "scm/ewm/pickcarts1/model/PickCartLayout",
+    "zscm/ewm/pickcarts1/model/PickCartLayout",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "scm/ewm/pickcarts1/utils/Util",
-    "scm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/Global",
   ],
   function (e, r, t, n, s) {
     "use strict";
@@ -6422,11 +6422,11 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/PickCartConnection",
+  "zscm/ewm/pickcarts1/model/PickCartConnection",
   [
     "sap/ui/model/json/JSONModel",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Util",
   ],
   function (n, t, i) {
     "use strict";
@@ -6697,8 +6697,8 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/PickCartLayout",
-  ["sap/ui/model/json/JSONModel", "scm/ewm/pickcarts1/utils/Const"],
+  "zscm/ewm/pickcarts1/model/PickCartLayout",
+  ["sap/ui/model/json/JSONModel", "zscm/ewm/pickcarts1/utils/Const"],
   function (t, n) {
     "use strict";
     var i;
@@ -7004,12 +7004,12 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/ProcessWarehouseTasks",
+  "zscm/ewm/pickcarts1/model/ProcessWarehouseTasks",
   [
     "sap/ui/model/json/JSONModel",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Const",
-    "scm/ewm/pickcarts1/utils/Util",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/utils/Util",
     "sap/ui/core/format/NumberFormat",
   ],
   function (t, e, r, n, o) {
@@ -8478,8 +8478,8 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/model/SerialNumber",
-  ["sap/ui/model/json/JSONModel", "scm/ewm/pickcarts1/utils/Util"],
+  "zscm/ewm/pickcarts1/model/SerialNumber",
+  ["sap/ui/model/json/JSONModel", "zscm/ewm/pickcarts1/utils/Util"],
   function (e, r) {
     "use strict";
     var t;
@@ -8566,7 +8566,7 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/utils/Const",
+  "zscm/ewm/pickcarts1/utils/Const",
   ["sap/ui/core/ValueState"],
   function (I) {
     "use strict";
@@ -8641,11 +8641,11 @@ sap.ui.predefine(
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.predefine(
-  "scm/ewm/pickcarts1/utils/Util",
+  "zscm/ewm/pickcarts1/utils/Util",
   [
     "sap/ui/core/ValueState",
-    "scm/ewm/pickcarts1/model/Global",
-    "scm/ewm/pickcarts1/utils/Const",
+    "zscm/ewm/pickcarts1/model/Global",
+    "zscm/ewm/pickcarts1/utils/Const",
     "sap/ui/core/format/DateFormat",
     "sap/ui/core/format/NumberFormat",
   ],
@@ -8817,51 +8817,51 @@ sap.ui.predefine(
   },
 );
 sap.ui.require.preload({
-  "scm/ewm/pickcarts1/i18n/i18n.properties":
+  "zscm/ewm/pickcarts1/i18n/i18n.properties":
     '# FIORI_PickByCart\n#__ldi.translation.uuid=72f01af0-2a83-11e7-9598-0800200c9a66\n\n#XTIT, 50: title or caption\nappTitle=Pick by Cart\n\n#YDES, 50: description\nappDescription=Multi-Order Picking\n\n#XFLD, 20: Label\nwarehouseOrderNumber=Warehouse Order {0}\n\n#XBUT, 20: button\ncancel=Cancel\n\n#XBUT, 20: button\nstartPicking=Start Picking\n\n#XBUT, 20: button\nlogoff=Log Off Cart\n\n#XBUT, 20: button\nreject=Reject\n\n#XBUT, 20: button\nreset=Reset\n\n#XBUT\nyes=Yes\n\n#XBUT\nno=No\n\n#XBUT\nok=OK\n\n#XBUT: Save button\nbtnTextSave=Save\n\n#XFLD, 20: Label\nqueueLabel=Queue\n\n\n#XBUT: Close button text\nbtnTextClose=Close\n\n#XTIT: Default Parameters\ndefaultParameters=Default Parameters\n\n#XMSG\ninvalidInput=Invalid Input\n\n#XMSG\nhaveWOIntheCart=Resource {0} is already assigned to warehouse order {1}. Complete or leave the current order before changing the picking mode and queue. \n\n#XMSG\nhasWoFromdifferentQueue=Resource {0} is already assigned to warehouse order {1} of queue {2}. \n\n#XMSG\ninvalidQuantity=Provide a correct quantity\n\n#XMSG\nroundUpQuantity=System automatically rounds this number to the nearest thousandths place\n\n#XFLD, 20: Label\nresource=Resource\n\n#XFLD, 20: Label\npickingMode=Picking Mode\n\n#XLST, 50: Item in an enumeration, such as a list or a drop-down list\nmanualSelection=Manual Selection\n\n#XLST, 50: Item in an enumeration, such as a list or a drop-down list\nsystemGuided=System-Guided\n\n#XMSG: Message text\nresourceHasBeenUsed=Pick cart {0} is being used by others; try another resource\n\n#XFLD, 20: Label\npreparationSteps=Preparation Steps\n\n#XFLD, 30: Label\npreparation=Prepare Handling Units\n\n#XFLD, 20: Label\npackageMaterial=Packaging Material\n\n#XFLD, 20: Label\npickHU=Pick-Handling Unit\n\n#XFLD, 20: Label\nlogicalPosition=Logical Position\n\n#XLGD, 20: Legend\nfullBox=Occupied\n\n#XLGD, 20: Legend\nemptyPosition=Empty Position\n\n#XMSG: Message text\ndebundleHandlingUnitMessage=Do you want to remove pick-handling unit {0} from logical position {1}?\n\n#XMSG: Message text\nhandlingUnitHasBeenOccupiedMsg=The HU {0} has been put on a logical position; provide another pick-HU\n\n#XMSG: Message text\nlogicalPositionHasBeenOccupiedMsg=The Logical Position {0} has been occupied; provide another empty position\n\n#XFLD, 20: Label\nean=EAN\n\n#XFLD, 20: Label\nsourceBin=Source Bin\n\n#XFLD, 20: Label\nsourceHU=Source Handling Unit\n\n#XFLD, 20: Placeholder\noptional=Optional\n\n#XFLD, 20: Label\nproduct=Product\n\n#XFLD, 20: Label\npickProducts=Pick Products\n\n#XFLD, 20: Label\nbatch=Batch Number\n\n#XFLD, 40: Label\ndestHU=Destination Handling Unit/Position\n\n#XFLD, 20: Label\npickSteps=Pick Steps\n\n#XFLD, 20: Label\nunit=EA\n\n#XBUT, 50: exception button\nexception=Exception\n\n#XBUT, 50: exception button\nfullDenial=Full Denial\n\n#XBUT, 50: exception button\npartialDenial=Partial Denial\n\n#XBUT, 50: exception button\nsplitting=Splitting\n\n#XBUT, 50: exception button\ndifference=Difference\n\n#XLGD, 50: Legend\nvalidHU=Wait-Listed\n\n#XLGD, 50: Legend\nneedMaterial=Picking\n\n#XLGD, 50: Legend\ncompleteHU=Picked\n\n#XLGD, 50: Legend\nincorrectPickedHU=Unsuccessful Pick\n\n#XLGD, 50: Legend\nonHoldingHU=Picked with Exception\n\n#XMSG: Message text\nscanIncorrectPickingHUMsg=Put products into the correct handling unit\n\n#XFLD: Label for exception dialogs\nfullDenialDialogText=The quantity is automatically set to "0" for the remaining HUs.\n\n#XFLD: Label for exception dialogs\ndifferenceDialogText=Provide the destination HU and the picked quantity.\n\n#XFLD: Label for exception dialogs\npatialDenialDialogText=Provide the destination HU and the picked quantity. And remember that the quantity is automatically set to "0" for the remaining HUs.\n\n#XFLD: Label for exception dialogs\npickQuantity=Picked Quantity\n\n#XFLD: Label\nsplittingFromDialogText=Provide the destination HU that you want to remove and the picked quantity.\n\n#XFLD: Label\nsplittingToDialogText=Provide a new pick-handling unit for the logical position.\n\n#XBUT, 10\nnext=Next\n\n#XFLD: Label for low quantity check dialog\nlowQuantityCheck=Low Quantity Check\n\n#XFLD: Label for low quantity check dialog\nactualQuantity=Actual Quantity\n\n#XFLD: Label for low quantity check dialog\nlowQuantityCheckText=Count and enter the actual quantity for the source bin.\n\n#XFLD, 50: Label\ndropSteps=Unloading Steps\n\n#XFLD, 50: Label\ndestBin=Destination Bin\n\n#XFLD, 50: Label\nunloading=Unload Handling Units\n\n#XLGD, 50: Legend\nneedToDropHandlingUnit=Unloading\n\n#XLGD, 50: Legend\nincorrectDroppedHU=Unsuccessful Unloading\n\n#XBUT\ndropAll=Unload All\n\n#XMSG: Message text\ndropWrongHandlingUnitMsg=Unload the correct handling unit.\n\n#XBUT: Terminate button\nterminate=Leave Order\n\n#XMSG\nterminateMessage=Do you just want to send the rest of the work back to the pool?\n\n#XFLD\nterminateText=Leave Order\n\n#XTIT: Warning text\nwarning=Warning\n\n#XCOL: table column heading\nwarehouseOrders=Warehouse Order\n\n#XCOL: table column heading\nplannedHUs=Planned HU\n\n#XCOL: table column heading\nlatestStartTime=Latest Start Time\n\n#XCOL: table column heading\nplannedDuration=Planned Duration\n\n#XCOL: table column heading\nQueue=Queue\n\n#XTIT: Legend Title\nlegend=Legend\n\n#XTIT: Warehouse Order Table Title\nwarehouseOrdersTitle=Warehouse Orders ( {0} )\n\n#XMSG: Message text\nnoHandlingUnitUnloadMessage=You have no handling units to unload for warehouse order {0}; choose OK to close the order\n\n#XFLD: Label for quantity adjuctment dialog\nquantityAdjustment=Quantity Adjustment\n\n#XFLD: Label for quantity adjuctment dialog\nactualPickedQuantity=Actual Picked Quantity\n\n#XFLD: Label for low quantity check dialog\nquantityAdjustmentText=Count and enter the actual quantity that you have picked from the source handling unit.\n\n#XMSG: Message text\ninvalidPositionMsg=Scan a logical position with a pick-handling unit\n\n#XMSG: Message for unloading with splitting\nunloadingWithSplittingMsg=Make sure that you unload handling units {0} together into the destination bin {1}.\n\n#XMSG: Message for server is unreachable\ninternetDisconnectedMsg=Cannot connect to server\n\n#XMSG: Message for scan a logical position in Pick-HU field\nscanLogicPostionWhenInputPickHU={0} can be a logical position instead of a pick-handling unit.\n\n#XFLD: Label for serial number popOver\nserialNum=Serial Number for {0}\n\n#XBUT, 20: button\nclear=Clear\n\n#XMSG: Message for duplicate serial number\nduplicateSNMsg=Serial number already scanned\n\n#XMSG: Message for number of serial number exceeds require quantity\nserialNumExceedMsg=Number of serial numbers exceeds the quantity to be picked for HU {0}\n\n#XMSG: Message for some serial numbers are missing\nmissSerialNumMsg=Some serial numbers are missing; continue to scan or use exceptions\n\n#XFLD: Label for exception serial number input field\nserialNumber=Serial Number\n\n#XMSG: Message for no serial number input for the  quantity adjustment pop up\nnoSerialNumForQtyAdjustmentMsg=You must provide at least one serial number\n\n#XFLD: Popup Title for quantity adjustment  when it is serial number managed\nqtyAdjustmentTitleForSerailNumMsg=Provide the serial numbers of the picked products.\n\n#XFLD: Popup Title for low qty check  when it is serial number managed\nlowQtyCheckTitleForSerailNumMsg=Provide the serial numbers of the remaining products in the source bin.\n\n#XMSG: Message for no serial number in  low qty check popup\nlowQtyCheckIsZeroWarningMsg=You have not scanned any serial numbers; choose OK if there are no products in source bin {0}\n\n#XFLD: Label for Product description field\nproductDescription=Product Description\\:\n\n#XMSG: Message for split exception\nputToNewPosition=Put the split product quantity into a new pick-handling unit.\n\n#XMSG: Message for no warehouse orders info\nnoWarehouseOrderAvailableMsg=No more available warehouse orders. Please exit the app.\n\n#XMSG: Message for documentary batches not supported\ndocumentaryBatchesNotSupportedMsg=The next warehouse order in the processed queue is documentary-batch related. Documentary batches are not supported. Contact your supervisor or warehouse operator to remove these warehouse orders from the queue. Please exit the app.\n\n#XMSG\nbringHuToDestMessage=Carry picked products to destination before leaving and send the rest of the work back to the pool?\n\n#XFLD\nbringHuToDestText=Unload HUs\n',
-  "scm/ewm/pickcarts1/manifest.json":
+  "zscm/ewm/pickcarts1/manifest.json":
     '{"_version":"1.11.0","sap.app":{"id":"zscm.ewm.pickcarts1","type":"application","i18n":"i18n/i18n.properties","applicationVersion":{"version":"2025.0.17"},"title":"{{appTitle}}","description":"{{appDescription}}","resources":"resources.json","ach":"SCM-EWM-WOP-PCK","sourceTemplate":{"id":"ui5template.basicSAPUI5ApplicationProject","version":"1.40.12"},"dataSources":{"mainService":{"uri":"/sap/opu/odata/SCWM/PICKCART_SRV","type":"OData","settings":{"odataVersion":"2.0","localUri":"localService/metadata.xml"}},"defaultParametersService":{"uri":"/sap/opu/odata/SCWM/USER_DEFAULTPARAMETER_SRV/","type":"OData","settings":{"odataVersion":"2.0","localUri":"localService/defaultParamsMetadata.xml"}}}},"sap.ui":{"technology":"UI5","icons":{"icon":"sap-icon://cart","favIcon":"","phone":"","phone@2":"","tablet":"","tablet@2":""},"deviceTypes":{"desktop":true,"tablet":true,"phone":true},"supportedThemes":["sap_hcb","sap_belize"]},"sap.ui5":{"flexEnabled":true,"config":{"sapFiori2Adaptation":true},"rootView":{"viewName":"zscm.ewm.pickcarts1.view.Main","type":"XML","id":"main"},"dependencies":{"minUI5Version":"1.136.1","libs":{"sap.m":{},"sap.ui.core":{},"sap.ui.layout":{"lazy":true},"sap.tl.ewm.lib.reuses1":{"lazy":true},"sap.ui.comp":{"lazy":true}}},"contentDensities":{"compact":false,"cozy":true},"models":{"i18n":{"type":"sap.ui.model.resource.ResourceModel","settings":{"bundleName":"zscm.ewm.pickcarts1.i18n.i18n"}},"":{"dataSource":"mainService","settings":{"defaultUpdateMethod":"PUT","defaultBindingMode":"TwoWay","refreshAfterChange":true},"preload":false},"defaultParameters":{"dataSource":"defaultParametersService","settings":{"metadataUrlParams":{"sap-documentation":"heading"},"defaultBindingMode":"TwoWay","defaultOperationMode":"Server","defaultCountMode":"Inline","refreshAfterChange":true},"preload":false}},"resources":{"css":[{"uri":"css/style.css"}]},"routing":{"config":{"routerClass":"sap.ui.core.routing.Router","viewType":"XML","viewPath":"zscm.ewm.pickcarts1.view","controlId":"appContainer","controlAggregation":"pages","clearControlAggregation":true,"bypassed":{"target":["logonResource"]},"async":true},"routes":[{"pattern":"","name":"logon","target":"logonResource"},{"pattern":"connection/{warehouseOrder}/{bRestore}","name":"connection","target":"pickCartConnection"},{"pattern":"processTasks/{warehouseOrder}/{bRestore}","name":"processTasks","target":"processTasks"},{"pattern":"dropHandlingUnit/{warehouseOrder}/{warehouseNumber}/{bRestore}","name":"dropHandlingUnit","target":"dropHandlingUnit"},{"pattern":"warehouseOrderList/{resourceId}/{warehouseNumber}","name":"warehouseOrderList","target":"warehouseOrderList"}],"targets":{"logonResource":{"viewName":"LogonResource","controlAggregation":"pages","viewId":"logonresource-view"},"pickCartConnection":{"viewName":"PickCartConnection","controlAggregation":"pages","viewId":"connection-view"},"processTasks":{"viewName":"ProcessWarehouseTasks","controlAggregation":"pages","viewId":"processtasks-view"},"dropHandlingUnit":{"viewName":"Drop","controlAggregation":"pages","viewId":"drop-view"},"warehouseOrderList":{"viewName":"WarehouseOrderList","controlAggregation":"pages","viewId":"warehouseorderlist-view"}}}},"sap.fiori":{"registrationIds":["F2793"],"archeType":"transactional"},"sap.platform.hcp":{"uri":""}}',
-  "scm/ewm/pickcarts1/view/Drop.view.xml":
+  "zscm/ewm/pickcarts1/view/Drop.view.xml":
     '\n<mvc:View id="drop-view" controllerName="zscm.ewm.pickcarts1.controller.Drop" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core"\n\txmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Page id="drop-page" showHeader="false" backgroundDesign="Solid"><subHeader><Toolbar id="drop-sub-toolbar" design="Transparent"><layout:HorizontalLayout id="drop-sub-toolbar-hlayout"><Title id="drop-sub-toolbar-hlayout-title" text="{path:\'global>/woNumber\', formatter:\'.getTitle\'}" titleStyle="H2" level="H2" class="sapUiMediumMarginEnd"></Title></layout:HorizontalLayout><Label text="{i18n>dropSteps}" id="id_label_dropSteps" labelFor="id-progress"/><ProgressIndicator id="id-progress" state="{= ${local>/progress} > 0 ? \'Success\' : \'None\'}"\n\t\t\t\t\tpercentValue="{parts:[{path:\'local>/progress\'},{path:\'local>/taskGroups\'}], formatter:\'.formatProgressPercentValue\'}" showValue="true"\n\t\t\t\t\tdisplayValue="{parts:[{path:\'local>/progress\'},{path:\'local>/taskGroups\'}], formatter:\'.formatProgressDisplayValue\'}"\n\t\t\t\t\tclass="sapUiTinyMarginTop" width="30%"></ProgressIndicator><ToolbarSpacer id="drop-sub-toolbar-hlayout-toolbarspacer" /></Toolbar></subHeader><content><layout:DynamicSideContent id="drop-content" sideContentPosition="Begin" showMainContent="true" showSideContent="true"\n\t\t\t\tclass="sapUiDSCExplored sapUiContentPadding" containerQuery="true"><layout:sideContent><form:SimpleForm id="drop-content-simpleform" class="sapUiNoMarginBottom" maxContainerCols="2" layout="ResponsiveGridLayout" adjustLabelSpan="false" labelSpanL="1"\n\t\t\t\t\t\tlabelSpanM="2" labelSpanS="3" emptySpanL="0" emptySpanM="0" title="{i18n>unloading}"><Label id="drop-content-simpleform-actualbin-label" text="{i18n>destBin}" labelFor="actualBinInput"><layoutData><layout:GridData id="drop-content-simpleform-actualbin-grid" span="L12 M12 S12"/></layoutData></Label><Input id="origionalDesbin" enabled="false" value="{local>/currentGroup/expectedBin}"><layoutData><layout:GridData id="origionalDesbin-grid" span="L9 M9 S9"/></layoutData></Input><Input id="actualBinInput" value="{local>/currentGroup/actualBin}" change="onDestBinChange" submit="onSubmit"\n\t\t\t\t\t\t\tvisible="{path:\'local>/currentGroup/destBinVerifyRequrired\'}"><layoutData><layout:GridData id="actualBinInput-grid" span="L3 M3 S3"/></layoutData></Input><Label id="drop-content-simpleform-desthu-label" text="{i18n>destHU}" labelFor="destHandlingUnitInput"><layoutData><layout:GridData id="drop-content-simpleform-desthu-label-grid" span="L12 M12 S12"/></layoutData></Label><Input id="destHandlingUnitInput" change="onDestHandlingUnitChange"><layoutData><layout:GridData id="destHandlingUnitInput-grid" span="L9 M9 S9"/></layoutData></Input></form:SimpleForm></layout:sideContent><layout:mainContent><Table id="PickCartTable" items="{path:\'cart>/layout\'}" backgroundDesign="Transparent"><headerToolbar><OverflowToolbar id="connectionTableToolbar"><core:Icon id="drop-main-icon" src="sap-icon://cart" size="26px"/><Title id="PickcartTitle" level="H4" titleStyle="H4"></Title><ToolbarSpacer id="drop-main-toolbarspacer"/><Button id="drop-main-legend-btn" icon="sap-icon://legend" press="onPressLegend" tooltip="{i18n>legend}"/><Button id="dropAllButton" text="{i18n>dropAll}" press="onDropAll" visible="{local>/currentGroup/isDropAll}" type="Transparent"\n\t\t\t\t\t\t\t\t\tenabled="false"></Button></OverflowToolbar></headerToolbar><layoutData><layout:GridData id="drop-main-table-grid" span="L8 M8 S8"></layout:GridData></layoutData><columns></columns><items><ColumnListItem id="drop-main-col-listitem" cells="{path:\'cart>cells\',templateShareable:true}"><cells><Button id="column-cell-button" icon="{path:\'cart>dropping/status\', formatter:\'.formatPositionIcon\'}"\n\t\t\t\t\t\t\t\t\t\tenabled="{path:\'cart>dropping/status\', formatter:\'.formatPositionEnabled\'}" press="onSelectPosition" width="100%"\n\t\t\t\t\t\t\t\t\t\ttype="{path:\'cart>dropping/status\', formatter:\'.formatPositionType\'}" text="{cart>Lab}"></Button></cells></ColumnListItem></items></Table><layout:Grid id="legend-grid" class="sapUiLargeMarginTop" position="Right" hSpacing="0" visible="true"><Title id="drop-main-legend-grid-title" level="H6" titleStyle="H6" text="{i18n>legend}"><layoutData><layout:GridData id="legend-grid-title-grid" span="L12 M12 S12"/></layoutData></Title><Button id="unloading-legend" icon="sap-icon://less" text="{i18n>needToDropHandlingUnit}" type="Emphasized"><layoutData><layout:GridData id="unloading-legend-grid" span="L3 M3 S3"/></layoutData></Button><ObjectStatus id="empty-legend" text="{i18n>emptyPosition}" class="sapUiSmallMarginTop" state="None"><layoutData><layout:GridData id="empty-legend-grid" span="L3 M3 S3"/></layoutData></ObjectStatus><ObjectStatus id="validHU-legend" icon="sap-icon://add-product" text="{i18n>validHU}" state="None" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="validHU-legend-grid" span="L3 M3 S3"/></layoutData></ObjectStatus><ObjectStatus id="decline-legend" icon="sap-icon://decline" text="{i18n>incorrectDroppedHU}" state="Error" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="decline-legend-grid" span="L3 M3 S3"/></layoutData></ObjectStatus></layout:Grid></layout:mainContent></layout:DynamicSideContent></content><Input id="dummy-input" visible="true" class="dummyCss"></Input><footer><OverflowToolbar id="drop-footer-overflowtoolbar"><Button id="errorMessagePopoverBtn" icon="sap-icon://message-popup" text="{= ${local>/errors}.length}"\n\t\t\t\t\tvisible="{= ${local>/errors}.length === 0 ? false : true}" press="onOpenMessagePopover" type="Emphasized"></Button><ToolbarSpacer id="drop-footer-overflowtoolbar-toolbarspacer"/><Button id="terminateButton" text="{i18n>terminate}" press="onTerminate" type="Transparent"></Button></OverflowToolbar></footer></Page></mvc:View>',
-  "scm/ewm/pickcarts1/view/LogonResource.view.xml":
+  "zscm/ewm/pickcarts1/view/LogonResource.view.xml":
     '\n<mvc:View id="logon-view" controllerName="zscm.ewm.pickcarts1.controller.LogonResource" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"\n\txmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:smartField="sap.ui.comp.smartfield"><Page id="logon-page" showHeader="false" backgroundDesign="Solid"><content><form:SimpleForm id="logon-form" class="sapUiLargeMarginTop" editable="true" layout="ResponsiveGridLayout" labelSpanXL="5" labelSpanL="5"\n\t\t\t\tlabelSpanM="5" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1"\n\t\t\t\tcolumnsL="1" columnsM="1" singleContainerFullSize="false"><smartField:SmartLabel id="pbc---logon--EWMResource--lable" labelFor="pbc---logon--EWMResource" text="{/#ShRsrc/EWMResource/@sap:label}"/><smartField:SmartField id="pbc---logon--EWMResource" value="{EWMResource}" editable="true" visible="true" change="onResourceInputChanged"\n\t\t\t\t\ttooltipLabel="{local>/toolTip}" valueState="{local>/valueState}"></smartField:SmartField><Label text="{i18n>pickingMode}" id="id-label-pick-mode" labelFor="pickingModesSelect"/><Select id="pickingModesSelect" change="pickingModesChanged" enabled="{local>/modeEditable}" selectedKey="{global>/selectedMode}"\n\t\t\t\t\titems="{ path: \'global>/pickModes\' }" ariaLabelledBy="id-label-pick-mode"><core:Item id="pickingModesSelect-item" key="{global>Name}" text="{global>Text}"/></Select><Label text="{i18n>queueLabel}" id="id-queue-label" labelFor="id-queue-select"/><ComboBox id="id-queue-select" items="{path: \'QueueModel>/items\'}" editable="{local>/modeEditable}" change="onQueueChange"><core:ListItem id="id-queue-item" key="{QueueModel>Queue}" text="{QueueModel>Queue}"/></ComboBox><Label id="startpicking-label" text="{i18n>startPicking}" visible="false"/><layout:HorizontalLayout id="startpicking-layout"><Button id="startPickBtn" text="{i18n>startPicking}" enabled="{global>/enableNext}" press="onPressNext" type="Emphasized"/></layout:HorizontalLayout></form:SimpleForm><Input id="dummy-input" visible="false" class="dummyCss"></Input></content><footer><OverflowToolbar id="logon-footer-overflowtoolbar"><ToolbarSpacer id="logon-toolbarspacer"/><Button id="logoffCartBtn" text="{i18n>logoff}" enabled="{= ${local>/editable} === false ? true : false}" press="onPressLogoff"\n\t\t\t\t\ttype="Default"></Button></OverflowToolbar></footer></Page></mvc:View>',
-  "scm/ewm/pickcarts1/view/Main.view.xml":
+  "zscm/ewm/pickcarts1/view/Main.view.xml":
     '\n<mvc:View id="main" controllerName="zscm.ewm.pickcarts1.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" displayBlock="true"\n\txmlns:custom="zscm.ewm.pickcarts1.control"><custom:AudioList id="audio-player"><custom:items><custom:Audio type="{Msgty}" src="{AudioUri}" id="pbc---app--audio"></custom:Audio></custom:items></custom:AudioList><App id="appContainer" busy="{global>/busy}"><pages></pages></App></mvc:View>',
-  "scm/ewm/pickcarts1/view/PickCartConnection.view.xml":
+  "zscm/ewm/pickcarts1/view/PickCartConnection.view.xml":
     '\n<mvc:View id="connection-view" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"\n\txmlns:suite="sap.suite.ui.commons" controllerName="zscm.ewm.pickcarts1.controller.PickCartConnection"\n\txmlns:html="http://www.w3.org/1999/xhtml"><Page id="connection-page" showHeader="false" backgroundDesign="Solid"><subHeader><Toolbar id="connection-subheader-toolbar" design="Transparent"><layout:HorizontalLayout id="connection-subheader-layout"><Title id="connection-subheader-layout-title" text="{path:\'global>/woNumber\', formatter:\'.getTitle\'}" titleStyle="H2" level="H2" class="sapUiTinyMarginTop sapUiMediumMarginEnd"/></layout:HorizontalLayout><Label text="{i18n>preparationSteps}" id="id_label_preparationSteps" labelFor="id-progress"/><ProgressIndicator id="id-progress" state="{= ${local>/progress} > 0 ? \'Success\' : \'None\'}" class="sapUiTinyMarginTop" width="30%"\n\t\t\t\t\tpercentValue="{parts:[{path:\'local>/progress\'},{path:\'local>/handlingUnits\'}], formatter:\'.formatProgressPercentValue\'}" showValue="true"\n\t\t\t\t\tdisplayValue="{parts:[{path:\'local>/progress\'},{path:\'local>/handlingUnits\'}], formatter:\'.formatProgressDisplayValue\'}"></ProgressIndicator><ToolbarSpacer id="connection-subheader-toolbarspacer"/></Toolbar></subHeader><content><layout:DynamicSideContent id="connection-dynamicsidecontent" sideContentPosition="Begin" showMainContent="true" showSideContent="true"\n\t\t\t\tclass="sapUiDSCExplored sapUiContentPadding" containerQuery="true"><layout:sideContent id="connection-sidecontent"><form:SimpleForm id="connection-simpleform" class="sapUiSmallMarginTop" maxContainerCols="2" layout="ResponsiveGridLayout" adjustLabelSpan="false" labelSpanL="1"\n\t\t\t\t\t\tlabelSpanM="2" labelSpanS="3" emptySpanL="0" emptySpanM="0" title="{i18n>preparation}"><Label text="{i18n>packageMaterial}" id="id-label-package-material" labelFor="id-input-package-material"><layoutData><layout:GridData id="connection-simpleform-grid-pakmat" span="L12 M12 S12"/></layoutData></Label><Input\n\t\t\t\t\t\t\tid="id-input-package-material"\n\t\t\t\t\t\t\tvalue="{parts:[{path:\'local>/currentHandlingUnit/Maktx\'}, {path:\'local>/currentHandlingUnit/ProductName\'}], formatter:\'.formatPackagingMaterial\'}"\n\t\t\t\t\t\t\tenabled="false"><layoutData><layout:GridData  id="connection-simpleform-grid-pakmat-input" span="L9 M9 S9"/></layoutData></Input><Label text="{i18n>pickHU}" id="id-label-pick-hu" labelFor="connection-hu-input"><layoutData><layout:GridData  id="connection-simpleform-grid-pickhu" span="L12 M12 S12"/></layoutData></Label><Input id="connection-hu-input"\n\t\t\t\t\t\t\tariaLabelledBy="id-label-pick-hu"\n\t\t\t\t\t\t\tvalue="{path:\'local>/currentHandlingUnit/HandlingUnitNumber\'}" valueStateText=""\n\t\t\t\t\t\t\tvalueState="{path:\'local>/handlingUnitState\', formatter:\'.formatValueState\'}"\n\t\t\t\t\t\t\tenabled="{= ${local>/progress} === ${local>/handlingUnits}.length ? false : true}"\n\t\t\t\t\t\t\tchange="onHandlingUnitChange" submit="onSubmit"><layoutData><layout:GridData id="connection-simpleform-grid-hu-input" span="L9 M9 S9"/></layoutData></Input><Label id="id-label-logical-position" text="{i18n>logicalPosition}" labelFor="connection-logical-position-input"><layoutData><layout:GridData id="connection-simpleform-grid-logpos" span="L12 M12 S12"/></layoutData></Label><Input id="connection-logical-position-input" \n\t\t\t\t\t\t\tariaLabelledBy="id-label-logical-position"\n\t\t\t\t\t\t\tvalueState="{path:\'local>/logicalPositionState\', formatter:\'.formatValueState\'}"\n\t\t\t\t\t\t\tenabled="{= ${local>/progress} === ${local>/handlingUnits}.length ? false : true}"\n\t\t\t\t\t\t\tchange="onLogicalPositionChange"><layoutData><layout:GridData id="connection-simpleform-grid-logpos-input" span="L9 M9 S9"/></layoutData></Input></form:SimpleForm></layout:sideContent><layout:mainContent id="connection-maincontent"><Table id="PickCartTable" items="{path:\'cart>/layout\'}" backgroundDesign="Transparent"><headerToolbar><OverflowToolbar id="connectionTableToolbar"><core:Icon id="connection-tabletoolbar-icon" src="sap-icon://cart" size="26px"/><Title id="PickcartTitle" level="H4" titleStyle="H4"></Title><ToolbarSpacer id="connection-tabletoolbar-toolbarspacer"/><Button id="connection-tabletoolbar-btn" icon="sap-icon://legend" press="onPressLegend" tooltip="{i18n>legend}"/></OverflowToolbar></headerToolbar><layoutData><layout:GridData id="connection-tabletoolbar-grid" span="L8 M8 S8"></layout:GridData></layoutData><columns></columns><items><ColumnListItem id="connection-columnlistitem" cells="{path:\'cart>cells\',templateShareable:true}"><cells><Button id="column-cell-button" icon="{= ${cart>connection/status} === 1 ? \'sap-icon://add-product\' : \'\'}" enabled="true" press="onSelectPosition" width="100%"\n\t\t\t\t\t\t\t\t\t\ttype="{= ${cart>connection/status} === 1 ? \'Emphasized\' : \'Transparent\'}" text="{cart>Lab}"></Button></cells></ColumnListItem></items></Table><Input id="dummy-input" visible="true" class="dummyCss"></Input><layout:Grid id="legend-grid" class="sapUiLargeMarginTop" position="Right" hSpacing="0" visible="true"><Title id="connection-title-legend" level="H6" titleStyle="H6" text="{i18n>legend}"><layoutData><layout:GridData id="connection-title-legend-grid" span="L12 M12 S12"/></layoutData></Title><Button id="connection-legend-grid-fullbox-btn" icon="sap-icon://add-product" enabled="true" text="{i18n>fullBox}" type="Emphasized"><layoutData><layout:GridData id="connection-legend-grid-fullbox-btn-grid" span="L2 M2 S2"/></layoutData></Button><Button id="connection-legend-grid-emptypos-btn" enabled="true" text="{i18n>emptyPosition}" type="Transparent"><layoutData><layout:GridData id="connection-legend-grid-emptypos-grid" span="L2 M2 S2"/></layoutData></Button></layout:Grid></layout:mainContent></layout:DynamicSideContent></content><footer><OverflowToolbar id="connection-overflowtoolbar"><Button id="errorMessagePopoverBtn" icon="sap-icon://message-popup" text="{= ${local>/errors}.length}"\n\t\t\t\t\tvisible="{= ${local>/errors}.length === 0 ? false : true}" press="onOpenMessagePopover" type="Emphasized"></Button><ToolbarSpacer id="connection-toolbarspacer"/><Button id="terminateBtn" text="{i18n>terminate}" press="onTerminate"></Button><Button id="resetBtn" text="{i18n>reset}" press="onResetPressed" visible="{= ${local>/progress} > 0 ? true : false}"></Button><Button id="nextBtn" text="{i18n>next}" press="onNavToProcessTasks" visible="{= ${local>/progress} === ${local>/handlingUnits}.length ? true : false}"></Button></OverflowToolbar></footer></Page></mvc:View>',
-  "scm/ewm/pickcarts1/view/ProcessWarehouseTasks.view.xml":
+  "zscm/ewm/pickcarts1/view/ProcessWarehouseTasks.view.xml":
     '\n<mvc:View id="processtasks-view" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"\n\txmlns:form="sap.ui.layout.form" xmlns:suite="sap.suite.ui.commons" xmlns:html="http://www.w3.org/1999/xhtml"\n\tcontrollerName="zscm.ewm.pickcarts1.controller.ProcessWarehouseTasks"><Page id="processtasks-page" showHeader="false" backgroundDesign="Solid"><subHeader><Toolbar id="processtasks-subheader-toolbar" design="Transparent"><layout:HorizontalLayout id="processtasks-subheader-horizontallayout"><Title id="processtasks-subheader-title" text="{path:\'global>/woNumber\', formatter:\'.getTitle\'}" titleStyle="H2" level="H2"\n\t\t\t\t\t\tclass="sapUiTinyMarginTop sapUiMediumMarginEnd"/></layout:HorizontalLayout><Label text="{i18n>pickSteps}" id="id_label_pickSteps" labelFor="id-progress"/><ProgressIndicator id="id-progress" class="sapUiTinyMarginTop" width="30%" state="Success"\n\t\t\t\t\tpercentValue="{parts:[{path:\'local>/taskGroupProgress\'},{path:\'local&gt;/warehouseTaskGroups\'}], formatter:\'.formatProgressPercentValue\'}"\n\t\t\t\t\tshowValue="true"\n\t\t\t\t\tdisplayValue="{parts:[{path:\'local>/taskGroupProgress\'},{path:\'local&gt;/warehouseTaskGroups\'}], formatter:\'.formatProgressDisplayValue\'}"/><ToolbarSpacer id="processtasks-subheader-toolbarspacer"/></Toolbar></subHeader><content><layout:DynamicSideContent id="processtasks-side" sideContentPosition="Begin" showMainContent="true" showSideContent="true"\n\t\t\t\tclass="sapUiDSCExplored sapUiContentPadding" containerQuery="true"><layout:sideContent><OverflowToolbar id="picking-header-toolbar"><Title id="processtasks-side-title" class="sapUiSmallMarginBegin" level="H4" titleStyle="H4" text="{i18n>pickProducts}"/><ToolbarSpacer id="processtasks-side-toolbarspacer"/><Title id="product-quantity-title" class="sapUiTinyMarginBegin" level="H2" titleStyle="H2"\n\t\t\t\t\t\t\ttext="{parts:[{path:\'local>/currentWarehouseTaskGroup/actualQuantity\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'},{path:\'local>/currentWarehouseTaskGroup/alternativeUom\'}], formatter:\'.formatQuantityDisplay\'}"/></OverflowToolbar><Image id="processtasks-side-image" class="sapUiTinyMarginBegin sapUiTinyMarginTop sapUiTinyMarginBottom custLeft" width="30%"\n\t\t\t\t\t\tsrc="{path:\'local>/currentWarehouseTaskGroup/productImg\'}"\n\t\t\t\t\t\tvisible="{path:\'local>/currentWarehouseTaskGroup/productImg\',formatter:\'.formatImageVisible\'}" tooltip="pic"></Image><Label text="{i18n>productDescription}" id="id-label-product-description" labelFor="processtasks-side-text"\n\t\t\t\t\t\tclass="sapUiSmallMarginBegin sapUiTinyMarginTop"\n\t\t\t\t\t\twidth="{path:\'local>/currentWarehouseTaskGroup/productImg\',formatter:\'.formatDescriptionWidth\'}" wrapping="true"></Label><Text id="processtasks-side-text" width="{path:\'local>/currentWarehouseTaskGroup/productImg\',formatter:\'.formatDescriptionWidth\'}"\n\t\t\t\t\t\twrapping="true" text="{path:\'local>/currentWarehouseTaskGroup/productDesc\'}" class="sapUiSmallMarginBegin sapUiTinyMarginTop"/><ObjectAttribute id="processtasks-side-oa-ean" title="{i18n>ean}" text="{path:\'local>/currentWarehouseTaskGroup/EAN\'}"\n\t\t\t\t\t\tclass="sapUiSmallMarginBegin sapUiTinyMarginTop custEanStyle"\n\t\t\t\t\t\tvisible="{path:\'local>/currentWarehouseTaskGroup/EAN\',formatter:\'.formatEANVisible\'}"></ObjectAttribute><form:SimpleForm id="task-group-info-form" class="sapUiNoMarginBottom" maxContainerCols="2" layout="ResponsiveGridLayout"\n\t\t\t\t\t\tadjustLabelSpan="false" labelSpanL="1" labelSpanM="2" labelSpanS="3" emptySpanL="0" emptySpanM="0"><Label text="{i18n>sourceBin}" id="id-label-source-bin" labelFor="source-bin-input"><layoutData><layout:GridData id="grid-sourcebin-label" span="L12 M12 S12"/></layoutData></Label><Input id="source-bin-readonly" ariaLabelledBy="id-label-source-bin" value="{path:\'local>/currentWarehouseTaskGroup/sourceBin\'}"\n\t\t\t\t\t\t\tenabled="false"><layoutData><layout:GridData id="grid-sourcebin-readonly-input" span="L9 M9 S9"/></layoutData></Input><Input id="source-bin-input" value="" change="onSourceBinChange" submit="onSubmit"\n\t\t\t\t\t\t\tvisible="{path:\'local>/currentWarehouseTaskGroup/sourceBinVerifyRequired\'}" ariaLabelledBy="id-label-source-bin"><layoutData><layout:GridData id="grid-sourcebin-input" span="L3 M3 S3"/></layoutData></Input><Label text="{i18n>sourceHU}" visible="{path:\'local>/currentWarehouseTaskGroup/sourceHUDisplay\'}" id="id-label-sourcehu"\n\t\t\t\t\t\t\tlabelFor="source-hu-input"><layoutData><layout:GridData id="grid-sourcehu-label" span="L12 M12 S12"/></layoutData></Label><Input ariaLabelledBy="id-label-sourcehu" id="sourceHU-readonly-input" value="{path:\'local>/currentWarehouseTaskGroup/sourceHUInit\'}"\n\t\t\t\t\t\t\tenabled="false"\n\t\t\t\t\t\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/sourceHUDisplay\'},{path:\'local>/currentWarehouseTaskGroup/sourceHUInit\'}], formatter:\'.formatSourceHUReadOnlyInputVisible\'}"><layoutData><layout:GridData id="grid-sourcehu-readonlyinput" span="L9 M9 S9"/></layoutData></Input><Input id="source-hu-input"\n\t\t\t\t\t\t\tplaceholder="{parts:[{path:\'local>/currentWarehouseTaskGroup/sourceHUInit\'},{path:\'local>/currentWarehouseTaskGroup/sourceHUMandatory\'}],formatter:\'.formatPlaceholder\'}"\n\t\t\t\t\t\t\tvalue="" change="onSourceHUChange" submit="onSourceHUSubmit" visible="{path:\'local>/currentWarehouseTaskGroup/sourceHUVerifyRequired\'}"\n\t\t\t\t\t\t\tariaLabelledBy="id-label-sourcehu"><layoutData><layout:GridData id="grid-sourcehu-mandatoryinput" span="L3 M3 S3"/></layoutData></Input><layout:HorizontalLayout id="horizontallayout-product"><Label text="{i18n>product}" class="sapUiTinyMarginBottom sapUiTinyMarginTop" id="id-label-product" labelFor="product-input"></Label><core:Icon id="id-serial-number" src="sap-icon://numbered-text" class="sapUiSmallMarginBegin sapUiTinyMarginBottom sapUiTinyMarginTop"\n\t\t\t\t\t\t\t\tcolor="Default" visible="{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'}"/></layout:HorizontalLayout><Input id="product-readonly" ariaLabelledBy="id-label-product" value="{path:\'local>/currentWarehouseTaskGroup/product\'}" enabled="false"><layoutData><layout:GridData id="grid-product-readonly-input" span="L9 M9 S9"/></layoutData></Input><Input id="product-input" value="" change="onProductChange" submit="onSubmit"\n\t\t\t\t\t\t\tvisible="{path:\'local>/currentWarehouseTaskGroup/productVerifyRequired\'}" ariaLabelledBy="id-label-product"><layoutData><layout:GridData id="grid-product-input" span="L3 M3 S3"/></layoutData></Input><Label id="batch-label" text="{i18n>batch}" visible="{path:\'local>/currentWarehouseTaskGroup/batchDisplay\'}" labelFor="batch-editable-input"><layoutData><layout:GridData id="grid-batch-label" span="L12 M12 S12"/></layoutData></Label><Input ariaLabelledBy="batch-label" id="batch-readonly-input" value="{path:\'local>/currentWarehouseTaskGroup/batchNoInit\'}" enabled="false"\n\t\t\t\t\t\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/batchDisplay\'},{path:\'local>/currentWarehouseTaskGroup/batchNoInit\'}], formatter:\'.formatBatchReadOnlyInputVisible\'}"><layoutData><layout:GridData id="grid-batch-readonly-input" span="L9 M9 S9"/></layoutData></Input><Input id="batch-editable-input" change="onBatchChange" submit="onSubmit"\n\t\t\t\t\t\t\tvisible="{path:\'local>/currentWarehouseTaskGroup/batchNoVerifyRequired\'}" ariaLabelledBy="batch-label"><layoutData><layout:GridData id="grid-batch-editable-input" span="L3 M3 S3"/></layoutData></Input><Label text="{i18n>destHU}" id="id-label-desthu" labelFor="dest-hu-input"><layoutData><layout:GridData id="grid-desthu-label" span="L12 M12 S12"/></layoutData></Label><Input id="dest-hu-input" change="onDestHUChange" enabled="true" ariaLabelledBy="id-label-desthu"><layoutData><layout:GridData id="grid-desthu-input" span="L9 M9 S9"/></layoutData></Input></form:SimpleForm></layout:sideContent><layout:mainContent><Table id="PickCartTable" items="{path:\'cart>/layout\'}" backgroundDesign="Transparent"><headerToolbar><OverflowToolbar id="processTasksTableToolbar"><core:Icon id="processwarehousetask-toolbar-icon" src="sap-icon://cart" size="26px"/><Title id="PickcartTitle" level="H4" titleStyle="H4"></Title><ToolbarSpacer id="pwt-main-toolbarspacer"/><Button id="pwt-main-btn-legend" icon="sap-icon://legend" press="onPressLegend" tooltip="{i18n>legend}"/></OverflowToolbar></headerToolbar><layoutData><layout:GridData id="pwt-main-grid" span="L8 M8 S8"></layout:GridData></layoutData><columns/><items><ColumnListItem id="pwt-main-items" cells="{path:\'cart>cells\',templateShareable:true}"><cells><Button id="column-cell-button" enabled="true" press="onSelectPosition" width="100%"\n\t\t\t\t\t\t\t\t\t\ttype="{path:\'cart>picking/status\', formatter:\'.formatButtonStatus\'}"\n\t\t\t\t\t\t\t\t\t\ttext="{parts: [{path:\'cart>picking/status\'}, {path:\'cart>Lab\'}, {path:\'cart>picking/actual\'}], formatter:\'.formatButtonText\'}"\n\t\t\t\t\t\t\t\t\t\ticon="{path:\'cart>picking/status\', formatter:\'.formatButtonIcon\'}"/></cells></ColumnListItem></items></Table><Input id="dummy-input" visible="true" class="dummyCss"></Input><layout:Grid id="legend-grid" class="sapUiLargeMarginTop" position="Right" hSpacing="0" visible="true"><Title id="pwt-main-legend-grid-title" level="H6" titleStyle="H6" text="{i18n>legend}"><layoutData><layout:GridData id="pwt-main-legend-grid" span="L12 M12 S12"/></layoutData></Title><layout:VerticalLayout id="pwt-main-verticallayout-1"><layout:layoutData><layout:GridData id="pwt-main-verticallayout-grid-1" span="L3 M3 S3"></layout:GridData></layout:layoutData><Button id="id_picking" enabled="true" icon="sap-icon://add" text="{i18n>needMaterial}" type="Emphasized"></Button><ObjectStatus id="id_emptyPosition" text="{i18n>emptyPosition}" class="sapUiTinyMarginTop"/></layout:VerticalLayout><layout:VerticalLayout id="pwt-main-verticallayout-2"><layout:layoutData><layout:GridData id="pwt-main-verticallayout-grid-2" span="L3 M3 S3"></layout:GridData></layout:layoutData><ObjectStatus id="id_completeHU" text="{i18n>completeHU}" state="Success" icon="sap-icon://accept" class="sapUiSmallMarginTop"/><ObjectStatus id="validHU" text="{i18n>validHU}" icon="sap-icon://add-product" class="sapUiSmallMarginTop"/></layout:VerticalLayout><layout:VerticalLayout id="pwt-main-verticallayout-3"><layout:layoutData><layout:GridData id="pwt-main-verticallayout-grid-3" span="L3 M3 S3"></layout:GridData></layout:layoutData><ObjectStatus id="id_onHoldingHU" text="{i18n>onHoldingHU}" state="Success" icon="sap-icon://warning" class="sapUiSmallMarginTop"/><ObjectStatus id="id_incorrectPickedHU" text="{i18n>incorrectPickedHU}" state="Error" icon="sap-icon://decline" class="sapUiSmallMarginTop"/></layout:VerticalLayout></layout:Grid></layout:mainContent></layout:DynamicSideContent></content><footer><OverflowToolbar id="pwt-footer-overflowtoolbar"><Button id="errorMessagePopoverBtn" icon="sap-icon://message-popup" text="{= ${local>/errors}.length}"\n\t\t\t\t\tvisible="{= ${local>/errors}.length === 0 ? false : true}" press="onOpenMessagePopover" type="Emphasized"></Button><ToolbarSpacer id="pwt-footer-toolbarspacer"/><Button id="terminateBtn" text="{i18n>terminate}" press="onTerminate" type="Transparent"></Button></OverflowToolbar></footer></Page></mvc:View>',
-  "scm/ewm/pickcarts1/view/WarehouseOrderList.view.xml":
+  "zscm/ewm/pickcarts1/view/WarehouseOrderList.view.xml":
     '\n<mvc:View id="warehouseorderlist-view" controllerName="zscm.ewm.pickcarts1.controller.WarehouseOrderList"\n\t\t\txmlns:mvc="sap.ui.core.mvc"\n\t\t\txmlns="sap.m"\n\t\t\txmlns:core="sap.ui.core"\n\t\t\txmlns:form="sap.ui.layout.form"><Page id="wholist-page" showHeader="false" backgroundDesign="Solid"><content><Table id="warehouseOrderList"\n\t\t\t\tinset="true"\n\t\t\t\tgrowing="true"\n\t\t\t\tgrowingThreshold="20"\n\t\t\t\tenableBusyIndicator="true"\n\t\t\t\tgrowingScrollToLoad="false"\n\t\t\t\tbusyIndicatorDelay="200"\n\t\t\t\titemPress="handleItemPress"\n\t\t\t\twidth="100%"><headerToolbar><Toolbar id="wholist-toolbar"><Title id="tableTitle"/><ToolbarSpacer id="wholist-toolbarspacer"></ToolbarSpacer><SearchField id="searchField" liveChange="onSearch" width="30%"></SearchField><Button id="wholist-btn" tooltip="" icon="sap-icon://sort" press="handleSortingDialogButtonPressed" /></Toolbar></headerToolbar><columns><Column id="wholist-column-1" width="12em"><Label id="wholist-column-label-1" design="Bold" text="{i18n>warehouseOrders}" /></Column><Column id="wholist-column-2" width="12em"><Label id="wholist-column-label-2" design="Bold" text="{i18n>plannedHUs}" /></Column><Column id="wholist-column-3" width="12em"><Label id="wholist-column-label-3" design="Bold" text="{i18n>latestStartTime}" /></Column><Column id="wholist-column-4" width="12em"><Label id="wholist-column-label-4" design="Bold" text="{i18n>plannedDuration}" /></Column><Column id="wholist-column-5" width="12em"><Label id="wholist-column-label-5" design="Bold" text="{i18n>Queue}" /></Column></columns><items><ColumnListItem id="wholist-columnlistitem" type="Navigation"><cells><Text id="wholist-columnlistitem-who" text="{EWMWarehouseOrder}"></Text><Text id="wholist-columnlistitem-huamount" text="{path:\'HuAmount\', formatter:\'.formatInteger\'}"></Text><Text id="wholist-columnlistitem-lsd" text="{parts:[{path:\'WhseOrderLatestStartDateTime\'},{path:\'IANA_TIMEZONE\'}], formatter:\'.formatDateTime\'}"></Text><Text id="wholist-columnlistitem-plandura" text="{path:\'WarehouseOrderPlannedDuration\', formatter:\'.formatNumber\'}"></Text><Text id="wholist-columnlistitem-queue" text="{Queue}"></Text></cells></ColumnListItem></items></Table></content></Page></mvc:View>',
-  "scm/ewm/pickcarts1/view/dialog/BringHUToDestinationDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/BringHUToDestinationDialog.fragment.xml":
     '\r\n<core:FragmentDefinition id="bringhutodestinationdialog-frag-def"\r\n\txmlns="sap.m"\r\n\txmlns:core="sap.ui.core"\r\n\txmlns:layout="sap.ui.layout"\r\n\txmlns:form="sap.ui.layout.form"><Dialog id="bringhutodestinationdialog-frag-def-dialog" title="{i18n>bringHuToDestText}" contentWidth="300px" draggable="true"><Text id="bringhutodestinationdialog-frag-def-text" text="{i18n>bringHuToDestMessage}" class="sapUiMediumMarginBottom"/><buttons><Button id="bringhutodestinationdialog-frag-def-btn-yes" text="{i18n>yes}" press="onBringHUToDestinationBeforeLeave"/><Button id="bringhutodestinationdialog-frag-def-btn-no" text="{i18n>no}" press="onShowTerminationDialog"/><Button id="bringhutodestinationdialog-frag-def-btn-close" text="{i18n>cancel}" press="closeBringHUToDestinationDialog"/></buttons></Dialog></core:FragmentDefinition>\r\n\r\n',
-  "scm/ewm/pickcarts1/view/dialog/DebundleHUAndPosition.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/DebundleHUAndPosition.fragment.xml":
     '\r\n<core:FragmentDefinition id="debundlehu-frg-def"\r\n\txmlns="sap.m"\r\n\txmlns:core="sap.ui.core"><Dialog\r\n\tid="debundelHUAndPosition"\r\n\ttitle="{i18n>warning}"\r\n\tcontentWidth="400px"\r\n\tstate="{i18n>warning}"\r\n\tafterClose="closeDialog"><content><Text id="debundelHUAndPosition-text" class="sapUiMediumMarginBottom sapUiSmallMarginBegin sapUiSmallMarginEnd" text="{parts:[{path: \'i18n>debundleHandlingUnitMessage\'}, {path: \'local>/debundleHUId\'}, {path: \'local>/debundlePosition\'}], formatter: \'.formatMessage\'}"></Text></content><beginButton><Button id="debundelHUAndPosition-ok-btn" text="{i18n>ok}" press="debundlePosition"></Button></beginButton><endButton><Button id="debundelHUAndPosition-cancel-btn" text="{i18n>cancel}" press="closeDialog"></Button></endButton></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/DifferenceDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/DifferenceDialog.fragment.xml":
     '\n<core:FragmentDefinition id="diff-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Dialog id="differenceDialog" title="{i18n>difference}" contentWidth="450px"\n\t\tcontentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'515px\' : \'300px\'}" draggable="true"\n\t\tafterOpen="afterOpenDifference"><Text id="diff-dialog-text" text="{i18n>differenceDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/><form:SimpleForm id="diff-simpleform" layout="ResponsiveGridLayout"><layout:Grid id="diff-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0"><Label id="diff-desthu-label" text="{i18n>destHU}" labelFor="difference-destHU-input"><layoutData><layout:GridData id="diff-desthu-label-grid" span="L8 M8 S8"/></layoutData></Label><Input id="difference-destHU-input" change="onDifferenceDestHUChange" value=""\n\t\t\t\t\teditable="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/destHUState\',formatter:\'.formatValueState\'}" valueStateText="{i18n>invalidInput}"><layoutData><layout:GridData id="difference-destHU-input-grid" span="L10 M10 S10"/></layoutData></Input><Label id="difference-pickqty-label" text="{i18n>pickQuantity}" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tlabelFor="difference-quantity-input" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="difference-pickqty-label-grid" span="L5 M5 S5"/></layoutData></Label><Input id="difference-quantity-input" value="{local>/exceptionInfo/pickedQuantity}"\n\t\t\t\t\tvisible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}" type="Number"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueState\'}"\n\t\t\t\t\tvalueStateText="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueText\'}" class="sapUiSmallMarginBottom"\n\t\t\t\t\tchange="onDifferenceQuantityChange" submit="onExceptionQuantitySubmit"><layoutData><layout:GridData id="difference-quantity-input-grid" span="L10 M10 S10"/></layoutData></Input><core:Fragment id="difference" fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/></layout:Grid></form:SimpleForm><buttons><Button id="diff-ok-btn"  text="{i18n>ok}" press="onPartialOrDifferenceConfirm"/><Button id="diff-cancel-btn" text="{i18n>cancel}" press="onCancelDialog"/></buttons></Dialog></core:FragmentDefinition>\n',
-  "scm/ewm/pickcarts1/view/dialog/ExceptionSerialNumber.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/ExceptionSerialNumber.fragment.xml":
     '\n<core:FragmentDefinition id="except-sn-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"\n\tcontrollerName="zscm.ewm.pickcarts1.controller.ProcessWarehouseTasks"><Label id="except-sn-actualpickqty" text="{i18n>actualPickedQuantity}"\n\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"\n\t\tlabelFor="exception-alternative-UoM"><layoutData><layout:GridData id="except-sn-actualpickqty-grid" span="L8 M8 S8"/></layoutData></Label><Input id="exception-alternative-UoM"\n\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"\n\t\tvalue="{local>/exceptionInfo/pickedUoM}" editable="false"><layoutData><layout:GridData id="exception-alternative-UoM-grid" span="L9 M9 S9"/></layoutData></Input><Label id="except-sn-altuom" text="{local>/currentWarehouseTaskGroup/alternativeUom}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"\n\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"><layoutData><layout:GridData id="except-sn-altuom-grid" span="L2 M2 S2"/></layoutData></Label><Label id="except-sn-sn" text="{i18n>serialNumber}" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" labelFor="id-input-serialNumber"><layoutData><layout:GridData id="except-sn-sn-grid" span="L8 M8 S8"/></layoutData></Label><Input id="id-input-serialNumber" change="onExceptionSerialNumberChange" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"\n\t\tvalue="" class="sapUiSmallMarginBottom"><layoutData><layout:GridData id="id-input-serialNumber-grid" span="L9 M9 S9"/></layoutData></Input><Label id="except-sn-length" text="{= ${serialNum>/forTasksPicking}.length}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"\n\t\tvisible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"><layoutData><layout:GridData id="except-sn-length-grid" span="L2 M2 S2"/></layoutData></Label><core:Fragment fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"/></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/FullDenialDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/FullDenialDialog.fragment.xml":
     '\n<core:FragmentDefinition id="fulldenial-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"><Dialog id="fullDenialDialog" title="{i18n>fullDenial}" contentWidth="300px" draggable="true"><Text id="fulldenial-text" text="{i18n>fullDenialDialogText}" class="sapUiSmallMarginTop sapUiMediumMarginBottom sapUiSmallMarginBegin sapUiSmallMarginEnd"/><buttons><Button id="fulldenial-confirm-btn" text="{i18n>ok}" press="onFullDenialConfirm"/><Button id="fulldenial-cancel-btn" text="{i18n>cancel}" press="onCancelDialog"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/LowQuantityCheckDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/LowQuantityCheckDialog.fragment.xml":
     '\n<core:FragmentDefinition id="lowqtycheck-frag-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Dialog id="lowQuantityCheckDialog" title="{i18n>lowQuantityCheck}" contentWidth="450px"\n\t\tcontentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'515px\' : \'300px\'}" draggable="true"><Text id="lowqtycheck-dialog-text-1" text="{i18n>lowQuantityCheckText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginBottom sapUiSmallMarginTop" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"/><Text id="lowqtycheck-dialog-text-2" text="{i18n>lowQtyCheckTitleForSerailNumMsg}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"/><form:SimpleForm id="lowqtycheck-simpleform" layout="ResponsiveGridLayout"><layout:Grid id="lowqtycheck-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0"><Label id="lowqtycheck-label-actualqty" text="{i18n>actualQuantity}" labelFor="actualQuantity-input" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"><layoutData><layout:GridData id="lowqtycheck-grid-actualqty" span="L6 M6 S6"/></layoutData></Label><Input id="actualQuantity-input" change="onLowQuantityCheckChange" value="{local>/currentWarehouseTaskGroup/lowQuantity}" type="Number"\n\t\t\t\t\tvalueState="{path:\'local>/currentWarehouseTaskGroup/lowQuantityState\',formatter:\'.formatValueState\'}"\n\t\t\t\t\tvalueStateText="{path:\'local>/currentWarehouseTaskGroup/lowQuantityState\',formatter:\'.formatValueText\'}" class="sapUiSmallMarginBottom"\n\t\t\t\t\tsubmit="onLowQuantitySubmit" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"><layoutData><layout:GridData id="lowqtycheck-grid-actualqtyinput" span="L10 M10 S10"/></layoutData></Input><core:Fragment id="lowQtyCheck" fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberListForLowQtyCheck" type="XML"/></layout:Grid></form:SimpleForm><buttons><Button id="lowQuantityCheck-confirm-btn" text="{i18n>ok}" press="onLowQuantityCheckConfirm"/><Button id="lowqtycheck-cancel-btn" text="{i18n>cancel}" press="onLowQuantityCheckCancel"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/PartialDenialDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/PartialDenialDialog.fragment.xml":
     '\n<core:FragmentDefinition id="partial-denial-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Dialog id="partialDenialDialog" title="{i18n>partialDenial}" contentWidth="450px" contentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'525px\' : \'300px\'}" draggable="true"\n\t\tafterOpen="afterOpenPartialDenial"><Text id="partialDenialDialog-text" text="{i18n>patialDenialDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/><form:SimpleForm id="partialDenialDialog-simpleform" layout="ResponsiveGridLayout"><layout:Grid id="partialDenialDialog-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0"><Label id="partialDenialDialog-desthu" text="{i18n>destHU}" labelFor="partialDenial-destHU-input"><layoutData><layout:GridData id="partialDenialDialog-desthu-grid" span="L8 M8 S8"/></layoutData></Label><Input id="partialDenial-destHU-input" change="onPartialDenialDestHUChange" value=""\n\t\t\t\t\teditable="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/destHUState\',formatter:\'.formatValueState\'}" valueStateText="{i18n>invalidInput}"><layoutData><layout:GridData id="partialDenial-destHU-input-grid" span="L10 M10 S10"/></layoutData></Input><Label id="partialDenial-pickQty" text="{i18n>pickQuantity}" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tlabelFor="partialDenial-quantity-input" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="partialDenial-pickQty-grid" span="L8 M8 S8"/></layoutData></Label><Input id="partialDenial-quantity-input" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tvalue="{local>/exceptionInfo/pickedQuantity}" type="Number"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueState\'}"\n\t\t\t\t\tvalueStateText="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueText\'}" class="sapUiSmallMarginBottom"\n\t\t\t\t\tchange="onPartialDenialQuantityChange" submit="onExceptionQuantitySubmit"><layoutData><layout:GridData id="partialDenial-quantity-input-grid" span="L10 M10 S10"/></layoutData></Input><core:Fragment id="partialDenial" fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/></layout:Grid></form:SimpleForm><buttons><Button id="partialDenial-confirm-btn" text="{i18n>ok}" press="onPartialOrDifferenceConfirm"/><Button id="partialDenial-cancel-btn" text="{i18n>cancel}" press="onCancelDialog"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/QuantityAdjustmentDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/QuantityAdjustmentDialog.fragment.xml":
     '\n<core:FragmentDefinition id="qty-adj-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Dialog id="quantityAdjustmentDialog" title="{i18n>quantityAdjustment}" afterOpen="afterOpenQuantityAdjustment"\n\t\tcontentWidth="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'450px\' : \'300px\'}"\n\t\tcontentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'515px\' : \'300px\'}" draggable="true"><Text id="quantityAdjustmentDialog-qtyadj" text="{i18n>quantityAdjustmentText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginBottom sapUiSmallMarginTop" visible = "{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"/><Text id="quantityAdjustmentDialog-qtyadjtitleforsn" text="{i18n>qtyAdjustmentTitleForSerailNumMsg}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop" visible = "{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"/><form:SimpleForm id="qty-adj-simple-form" layout="ResponsiveGridLayout"><layout:Grid id="qty-adj-simple-form-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0"><Label id="qty-adj-actpickqty" text="{i18n>actualPickedQuantity}" labelFor="quantityAdjustment-input" visible = "{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"><layoutData><layout:GridData id="qty-adj-actpickqty-grid" span="L10 M10 S10"/></layoutData></Label><Input id="quantityAdjustment-input" change="onQuantityAdjustmentChange" value="" type="Number"\n\t\t\t\t\tvalueState="{path:\'local>/currentWarehouseTaskGroup/quantityAdjustState\',formatter:\'.formatValueState\'}"\n\t\t\t\t\tvalueStateText="{path:\'local>/currentWarehouseTaskGroup/quantityAdjustState\',formatter:\'.formatValueText\'}" class="sapUiSmallMarginBottom"\n\t\t\t\t\tsubmit="onQuantityAdjustmentSubmit" visible = "{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"><layoutData><layout:GridData id="quantityAdjustment-input-grid" span="L10 M10 S10"/></layoutData></Input><core:Fragment id="quantityAdjustment"  fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"></core:Fragment></layout:Grid></form:SimpleForm><buttons><Button id="quantityAdjustment-confirm-btn" text="{i18n>ok}" press="onQuantityAdjustmentConfirm"/><Button id="quantityAdjustment-cancel-btn" text="{i18n>cancel}" press="onQuantityAdjustmentCancel"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SerialNumberList.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SerialNumberList.fragment.xml":
     '\n<core:FragmentDefinition id="snlist-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"><List id="snlist-list" mode="Delete" delete="onSerialNumberDeleteForTasksPicking" items="{path: \'serialNum>/forTasksPicking\' }"\n\t\tvisible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"><StandardListItem id="snlist-stdn-listitm" title="{serialNum>}"/></List></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SerialNumberListForLowQtyCheck.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SerialNumberListForLowQtyCheck.fragment.xml":
     '\n<core:FragmentDefinition id="snlist-lowqty-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"><Label id="snlist-lowqty-actualqty" text="{i18n>actualQuantity}" visible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"\n\t\tlabelFor="partialDenial-alternative"><layoutData><layout:GridData id="snlist-lowqty-actualqty-grid" span="L8 M8 S8"/></layoutData></Label><Input id="exception-alternative-UoM"\n\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"\n\t\tvalue="{local>/exceptionInfo/lowQtyCheckUom}" editable="false" ><layoutData><layout:GridData id="exception-alternative-UoM-grid" span="L9 M9 S9"/></layoutData></Input><Label id="snlist-lowqty-altuom" text="{local>/currentWarehouseTaskGroup/alternativeUom}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"\n\t\t\tvisible="{parts:[{path:\'local>/currentWarehouseTaskGroup/isSerialNumberEnabled\'},{path:\'local>/currentWarehouseTaskGroup/totalBaseQty\'},{path:\'local>/currentWarehouseTaskGroup/totalAlternativeQty\'}], formatter:\'.formatExceptionUomVisible\'}"><layoutData><layout:GridData id="snlist-lowqty-altuom-grid" span="L2 M2 S2"/></layoutData></Label><Label id="snlist-lowqty-sn" text="{i18n>serialNumber}" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" labelFor="exception-serial-number"><layoutData><layout:GridData id="snlist-lowqty-sn-grid" span="L8 M8 S8"/></layoutData></Label><Input id="id-input-serialNumber" change="onSerialNumForLowQtyCheckChange"\n\t\tvisible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}" value="" class="sapUiSmallMarginBottom"><layoutData><layout:GridData id="id-input-serialNumber-grid" span="L9 M9 S9"/></layoutData></Input><Label  id="snlist-lowqty-check" text="{= ${serialNum>/forLowQtyCheck}.length}" class="sapUiTinyMarginBegin sapUiSmallMarginTop"\n\t\tvisible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"><layoutData><layout:GridData id="snlist-lowqty-check-grid" span="L2 M2 S2"/></layoutData></Label><List id="snlist-lowqty-list" mode="Delete" delete="onSerialNumberDeleteForLowQtyCheck" items="{path: \'serialNum>/forLowQtyCheck\' }" visible="{local>/currentWarehouseTaskGroup/isSerialNumberEnabled}"><StandardListItem id="snlist-lowqty-listitem" title="{serialNum>}"/></List></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SerialNumberPopover.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SerialNumberPopover.fragment.xml":
     '\n<core:FragmentDefinition id="sn-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"><Popover id="sn-popover" title="{i18n>serialNum}" class="sapUiContentPadding" placement="Bottom"><HBox id="sn-hbox"><Input id="id-input-serialNumber" change="onSerialNumChange"\n\t\t\t\tenabled="{path: \'serialNum>/forTasksPicking\', formatter:\'.formatSerialNumInputVisible\'}"/><Label id="sn-hbox-label"\n\t\t\t\ttext="{parts:[{path: \'serialNum>/forTasksPicking\'}, {path: \'local>/currentWarehouseTaskGroup/baseUom\'}], formatter:\'.formatSerialNumQtyDisplay\'}"\n\t\t\t\tclass="sapUiSmallMarginTop"/></HBox><core:Fragment fragmentName="zscm.ewm.pickcarts1.view.dialog.SerialNumberList" type="XML"></core:Fragment><footer><Toolbar id="sn-footer-toolbar"><ToolbarSpacer id="sn-footer-toolbarspacer"/><Button id="sn-footer-btn" text="{i18n>clear}" press="onSerialNumClear"/></Toolbar></footer></Popover></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SortWarehouseOrder.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SortWarehouseOrder.fragment.xml":
     '\r\n<core:FragmentDefinition id="sort-frag-def"\r\n\txmlns="sap.m"\r\n\txmlns:core="sap.ui.core"><ViewSettingsDialog\r\n\t\tid="sortWarehouseOrder"\r\n\t\tconfirm="handleConfirm"><sortItems><ViewSettingsItem id="sortwho-item-who" text="{i18n>warehouseOrders}" key="EWMWarehouseOrder" /><ViewSettingsItem id="sortwho-item-huamount" text="{i18n>plannedHUs}" key="HuAmount" /><ViewSettingsItem id="sortwho-item-lsd" text="{i18n>latestStartTime}" key="WhseOrderLatestStartDateTime" selected="true" /><ViewSettingsItem id="sortwho-item-planneduration" text="{i18n>plannedDuration}" key="WarehouseOrderPlannedDuration"/><ViewSettingsItem id="sortwho-item-queue" text="{i18n>Queue}" key="Queue" /></sortItems></ViewSettingsDialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SplittingFromDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SplittingFromDialog.fragment.xml":
     '\n<core:FragmentDefinition id="spltfromdialog-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"><Dialog id="splittingFromDialog" title="{i18n>splitting}" contentWidth="450px"\n\t\tcontentHeight="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? \'515px\' : \'300px\'}" draggable="true"\n\t\tafterOpen="afterOpenSplitting"><Text id="spltfromdialog-text" text="{i18n>splittingFromDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/><form:SimpleForm  id="spltfromdialog-simpleform" layout="ResponsiveGridLayout"><layout:Grid  id="spltfromdialog-simpleform-grid" position="Left" defaultSpan="L10 M10 S10" vSpacing="0"><Label id="spltfromdialog-label-desthu" text="{i18n>destHU}" labelFor="splitting-destHU-input"><layoutData><layout:GridData id="spltfromdialog-label-desthu-grid" span="L8 M8 S8"/></layoutData></Label><Input id="splitting-destHU-input" change="onSplittingDestHUChange" value=""\n\t\t\t\t\teditable="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/destHUState\',formatter:\'.formatValueState\'}" valueStateText="{i18n>invalidInput}"><layoutData><layout:GridData id="spltfromdialog-input-desthu-grid" span="L10 M10 S10"/></layoutData></Input><Label id="spltfromdialog-label-pickqty" text="{i18n>pickQuantity}" visible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tlabelFor="splitting-quantity-input" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="spltfromdialog-label-pickqty-grid" span="L5 M5 S5"/></layoutData></Label><Input id="splitting-quantity-input" change="onSplittingQuantityChange" value="{local>/exceptionInfo/pickedQuantity}" type="Number"\n\t\t\t\t\tvisible="{= ${local>/currentWarehouseTaskGroup/isSerialNumberEnabled} ? false : true}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueState\'}"\n\t\t\t\t\tvalueStateText="{path:\'local>/exceptionInfo/pickedQuantityState\',formatter:\'.formatValueText\'}" class="sapUiSmallMarginBottom"\n\t\t\t\t\tsubmit="onExceptionQuantitySubmit"><layoutData><layout:GridData id="spltfromdialog-label-splitqty-input-grid" span="L10 M10 S10"/></layoutData></Input><core:Fragment id="splitting" fragmentName="zscm.ewm.pickcarts1.view.dialog.ExceptionSerialNumber" type="XML"/></layout:Grid></form:SimpleForm><buttons><Button id="spltfromdialog-next-splitting-dialog-btn" text="{i18n>next}" press="onNextSplittingDialog"/><Button id="spltfromdialog-cancel-dialog-btn" text="{i18n>cancel}" press="onCancelDialog"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/SplittingToDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/SplittingToDialog.fragment.xml":
     '\n<core:FragmentDefinition id="splttodialog-frg-def" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout"\n\txmlns:form="sap.ui.layout.form"><Dialog id="splittingToDialog" title="{i18n>splitting}" contentWidth="450px" draggable="true"><Text id="splttodialog-text" text="{i18n>splittingToDialogText}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginTop"/><Text id="splttodialog-text2" text="{i18n>putToNewPosition}" class="sapUiMediumMarginBegin sapUiMediumMarginEnd sapUiSmallMarginBottom"/><form:SimpleForm id="splttodialog-simpleform" layout="ResponsiveGridLayout"><layout:Grid id="splttodialog-simpleform-grid" position="Left" defaultSpan="XL10 L10 M10 S10" vSpacing="0"><Label id="splttodialog-simpleform-label-patmat" text="{i18n>packageMaterial}" labelFor="splitting-material-input"><layoutData><layout:GridData id="splttodialog-simpleform-label-patmat-grid" span="L5 M5 S5"/></layoutData></Label><Input id="splitting-material-input" value="{local>/exceptionInfo/packageMaterial}" enabled="false" class="sapUiMediumMarginEnd"><layoutData><layout:GridData id="splitting-material-input-grid" span="L10 M10 S10"/></layoutData></Input><Label id="splttodialog-simpleform-label-pickhu" text="{i18n>pickHU}" labelFor="splitting-pickHU-input" class="sapUiSmallMarginTop"><layoutData><layout:GridData id="splttodialog-simpleform-label-pickhu-grid" span="L5 M5 S5"/></layoutData></Label><Input id="splitting-pickHU-input" value="{local>/exceptionInfo/pickingHU}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/pickingHUState\',formatter:\'.formatValueState\'}" valueStateText="{i18n>invalidInput}"\n\t\t\t\t\tchange="onSplittingPickingHUChange"><layoutData><layout:GridData id="splitting-pickHU-input-grid" span="L10 M10 S10"/></layoutData></Input><Label id="splttodialog-simpleform-label-logpos" text="{i18n>logicalPosition}" labelFor="splitting-logicalPosition-input"\n\t\t\t\t\tclass="sapUiSmallMarginTop"><layoutData><layout:GridData id="splttodialog-simpleform-label-logpos-grid" span="L5 M5 S5"/></layoutData></Label><Input id="splitting-logicalPosition-input" value="{local>/exceptionInfo/positionLabel}"\n\t\t\t\t\tvalueState="{path:\'local>/exceptionInfo/logicalPositionState\',formatter:\'.formatValueState\'}" valueStateText="{i18n>invalidInput}"\n\t\t\t\t\tclass="sapUiSmallMarginBottom" change="onSplittingLogicalPositionChange" submit="onSplittingLogicalPositionSubmit"><layoutData><layout:GridData id="splitting-logicalPosition-input-grid" span="L10 M10 S10"/></layoutData></Input></layout:Grid></form:SimpleForm><buttons><Button id="splitting-ok-btn" text="{i18n>ok}" press="onSplittingConfirm"/></buttons></Dialog></core:FragmentDefinition>',
-  "scm/ewm/pickcarts1/view/dialog/TerminationDialog.fragment.xml":
+  "zscm/ewm/pickcarts1/view/dialog/TerminationDialog.fragment.xml":
     '\r\n<core:FragmentDefinition id="terminationdialog-frag-def"\r\n\txmlns="sap.m"\r\n\txmlns:core="sap.ui.core"\r\n\txmlns:layout="sap.ui.layout"\r\n\txmlns:form="sap.ui.layout.form"><Dialog id="terminationdialog-frag-def-dialog" title="{i18n>terminateText}" contentWidth="300px" draggable="true"><Text id="terminationdialog-frag-def-text" text="{i18n>terminateMessage}" class="sapUiMediumMarginBottom"/><buttons><Button id="terminationdialog-frag-def-btn-split" text="{i18n>yes}" press="onTerminateBySplit"/><Button id="terminationdialog-frag-def-btn-break" text="{i18n>no}" press="onTerminateByBreak"/><Button id="terminationdialog-frag-def-btn-close" text="{i18n>cancel}" press="closeTerminationDialog"/></buttons></Dialog></core:FragmentDefinition>',
 });
 //# sourceMappingURL=Component-preload.js.map
