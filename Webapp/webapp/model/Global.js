@@ -13,6 +13,7 @@ sap.ui.define(
     var n;
     var s = "System-Guided";
     var u = "Manual";
+    var p = "Custom-MLMU";
     return {
       i18nModel: {},
       init: function (t) {
@@ -23,10 +24,12 @@ sap.ui.define(
             woNumber: "",
             userName: "",
             appProgress: 0,
-            selectedMode: s,
+            //selectedMode: s,
+            selectedMode: p,
             pickModes: [
               { Name: s, Text: t.getObject("systemGuided") },
               { Name: u, Text: t.getObject("manualSelection") },
+              { Name: p, Text: t.getObject("customMLMU") },
             ],
           });
           n.setDefaultBindingMode(r.TwoWay);
