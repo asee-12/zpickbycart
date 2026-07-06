@@ -28,7 +28,13 @@ sap.ui.define([
 					}, {
 						"Name": _manualMode,
 						"Text": i18n.getObject("manualSelection")
-					}]
+					},
+				//20260706 - add mode MLMU
+				{
+					"Name": _customMLMU,
+					"Text": i18n.getObject("customMLMU")
+				}
+				]
 				});
 				_oModel.setDefaultBindingMode(BindingMode.TwoWay);
 			}
