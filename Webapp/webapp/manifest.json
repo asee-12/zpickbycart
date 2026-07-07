@@ -148,6 +148,11 @@
                     "name": "connection",
                     "target": "pickCartConnection"
                 },
+            {
+                    "pattern": "zconnection/{warehouseOrder}/{bRestore}",
+                    "name": "zconnection",
+                    "target": "zpickCartConnection"
+                },
                 {
                     "pattern": "processTasks/{warehouseOrder}/{bRestore}",
                     "name": "processTasks",
@@ -174,6 +179,11 @@
                     "viewName": "PickCartConnection",
                     "controlAggregation": "pages",
                     "viewId": "connection-view"
+                },
+                "zpickCartConnection": {
+                    "viewName": "ZPickCartConnection",
+                    "controlAggregation": "pages",
+                    "viewId": "zconnection-view"
                 },
                 "processTasks": {
                     "viewName": "ProcessWarehouseTasks",
