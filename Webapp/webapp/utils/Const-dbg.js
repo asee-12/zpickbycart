@@ -52,6 +52,7 @@ sap.ui.define([
 		ROUT_NAME: {
 			LOGON: "logon",
 			CONNECTION: "connection",
+			ZCONNECTION: "zconnection",
 			PROCESS_TASKS: "processTasks",
 			DROP_HU: "dropHandlingUnit",
 			WO_LIST: "warehouseOrderList"
