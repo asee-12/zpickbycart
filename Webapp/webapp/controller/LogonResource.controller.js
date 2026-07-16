@@ -233,6 +233,8 @@ sap.ui.define(
           }
         } else {
           var s = !i.isSystemMode();
+          //20260716 - get the chosen mode
+          var y = i.isSystemMode();
           this.setBusy(true);
           r.logonResource(s)
             .then(
@@ -240,7 +242,8 @@ sap.ui.define(
                 if (e && e.EWMWarehouseOrder !== l) {
                   i.setWONumber(e.EWMWarehouseOrder);
                   i.setWoQueue(e.Queue);
-                  var t = a.getNavParamsByStatus(e.PickcartWhoStatus, e, false);
+                  //20270716 add 1 parameter to pass 
+                  var t = a.getNavParamsByStatus(e.PickcartWhoStatus, e, false, y);
                   if (t.route) {
                     i.setAppProgress(t.progress);
                     this.navTo(t.route, t.param);

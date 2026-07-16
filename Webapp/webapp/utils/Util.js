@@ -25,16 +25,24 @@ sap.ui.define(
       trim: function (r) {
         return $.trim(r);
       },
-      getNavParamsByStatus: function (r, e, n) {
+      getNavParamsByStatus: function (r, e, n, y) {
         var a;
         var i;
         var s = t.WHO_STATUS;
         var o = { bRestore: !!n };
         switch (r) {
           case s.INITIAL:
-            a = "connection";
-            i = 2;
-            o.warehouseOrder = e.EWMWarehouseOrder;
+            //20260716 - add if else
+            if (y == "Custom-MLMU") {
+              //call the z view
+              a = "zconnection";
+              i = 2;        
+              //o.warehouseOrder = e.EWMWarehouseOrder;      
+            } else {
+              a = "connection";
+              i = 2;
+              o.warehouseOrder = e.EWMWarehouseOrder;
+            }
             break;
           case s.PICKING:
             a = "processTasks";
