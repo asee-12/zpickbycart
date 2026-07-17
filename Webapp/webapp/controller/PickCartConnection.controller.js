@@ -8,7 +8,7 @@ sap.ui.define(
     "zscm/ewm/pickcarts1/model/Global",
     "zscm/ewm/pickcarts1/model/PickCartConnection",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "sap/m/Dialog",
     "sap/m/ButtonType",
     "zscm/ewm/pickcarts1/utils/Util",

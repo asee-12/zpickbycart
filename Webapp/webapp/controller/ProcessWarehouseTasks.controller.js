@@ -10,7 +10,7 @@ sap.ui.define(
     "zscm/ewm/pickcarts1/model/SerialNumber",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
     "zscm/ewm/pickcarts1/utils/Const",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/utils/Util",
   ],
   function (t, e, i, n, s, a, r, u, o) {

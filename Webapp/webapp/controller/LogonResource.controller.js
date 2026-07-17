@@ -5,7 +5,7 @@ sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/model/Global",
     "zscm/ewm/pickcarts1/model/OData",
     "zscm/ewm/pickcarts1/model/LogonResource",

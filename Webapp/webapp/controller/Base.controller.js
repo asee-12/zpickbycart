@@ -4,7 +4,7 @@
 sap.ui.define(
   [
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
     "zscm/ewm/pickcarts1/model/LogonResource",
     "zscm/ewm/pickcarts1/model/OData",

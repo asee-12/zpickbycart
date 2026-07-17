@@ -4,7 +4,7 @@
 
 -->
 <mvc:View id="zconnection-view" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
-	xmlns:suite="sap.suite.ui.commons" controllerName="zscm.ewm.pickcarts1.controller.ZPickCartConnection"
+	xmlns:suite="sap.suite.ui.commons" controllerName="zscm.ewm.pickcarts1.controller.PickCartConnection"
 	xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page id="connection-page" showHeader="false" backgroundDesign="Solid">
 		<subHeader>
