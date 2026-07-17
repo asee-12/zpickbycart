@@ -14,14 +14,14 @@ builder:
       afterTask: generateCachebusterInfo
       configuration:
         target:
-          destination: aa-s4h-100-pp
-          url: http://scm-s4hana01.mscg.local.npp:8001
+          destination: S4HANA_DS4
+          url: http://vhdhbds4ci.sap.dandh.net:44300
           client: '100'
         app:
-          name: ZEWM_DH_CUSTPBC
+          name: ZEM_DH_CUSTPBC
           description: Custom D&H Pick by Cart
-          package: ZDANDH_PICKBYCART
-          transport: S4HK900977
+          package: ZEM_DI185
+          transport: DS4K903274
         exclude:
           - /test/
           - /localService/
