@@ -2,7 +2,8 @@
  * Copyright (C) 2009-2025 SAP SE or an SAP affiliate company. All rights reserved.
  */
 sap.ui.define(
-  ["sap/ui/model/json/JSONModel", "zscm/ewm/pickcarts1/utils/Const"],
+  ["sap/ui/model/json/JSONModel", 
+    "zscm/ewm/pickcarts1/utils/Const"],
   function (t, n) {
     "use strict";
     var i;

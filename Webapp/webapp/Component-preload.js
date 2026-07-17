@@ -180,7 +180,7 @@ sap.ui.predefine(
   "zscm/ewm/pickcarts1/controller/Base.controller",
   [
     "sap/ui/core/mvc/Controller",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
     "zscm/ewm/pickcarts1/model/LogonResource",
     "zscm/ewm/pickcarts1/model/OData",
@@ -1252,7 +1252,7 @@ sap.ui.predefine(
   [
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/model/Global",
     "zscm/ewm/pickcarts1/model/OData",
     "zscm/ewm/pickcarts1/model/LogonResource",
@@ -1619,7 +1619,7 @@ sap.ui.predefine(
     "zscm/ewm/pickcarts1/model/Global",
     "zscm/ewm/pickcarts1/model/PickCartConnection",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "sap/m/Dialog",
     "sap/m/ButtonType",
     "zscm/ewm/pickcarts1/utils/Util",
@@ -1901,7 +1901,7 @@ sap.ui.predefine(
     "zscm/ewm/pickcarts1/model/SerialNumber",
     "zscm/ewm/pickcarts1/model/PickCartLayout",
     "zscm/ewm/pickcarts1/utils/Const",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/utils/Util",
   ],
   function (t, e, i, n, s, a, r, u, o) {
@@ -4302,7 +4302,7 @@ sap.ui.predefine(
     "zscm/ewm/pickcarts1/model/Global",
     "zscm/ewm/pickcarts1/utils/Const",
     "zscm/ewm/pickcarts1/utils/Util",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "sap/ui/model/Filter",
     "sap/ui/model/Sorter",
     "sap/ui/model/json/JSONModel",
@@ -5025,7 +5025,7 @@ sap.ui.predefine(
   "zscm/ewm/pickcarts1/model/Drop",
   [
     "sap/ui/model/json/JSONModel",
-    "sap/ui/core/ValueState",
+    "sap/ui/core/library",
     "zscm/ewm/pickcarts1/utils/Const",
     "zscm/ewm/pickcarts1/utils/Util",
   ],

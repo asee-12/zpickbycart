@@ -3,7 +3,7 @@
  */
 sap.ui.define([
 	"sap/ui/model/json/JSONModel",
-	"sap/ui/core/ValueState"
+	"sap/ui/core/library"
 ], function(JSONModel, ValueState) {
 	"use strict";
 	var _oModel;
